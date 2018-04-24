@@ -94,19 +94,6 @@
             }
           },
           {
-            "name": "isMultinic",
-            "type": "Microsoft.Common.DropDown",
-            "label": "Type of Deployment",
-            "toolTip": "Select wheter device is multinic",
-            "defaultValue": 0,
-            "constraints": {
-              "allowedValues": [
-                 0,
-                 1
-              ]
-            }
-          },
-          {
             "name": "vnetSpec",
             "type": "Microsoft.Network.VirtualNetworkCombo",
             "label": {
@@ -137,8 +124,7 @@
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
-                  "requireContiguousAddresses": true,
-                  "visible": "[bool(steps('isMultinic'))]" 
+                  "requireContiguousAddresses": true 
                 }
               }
             }
