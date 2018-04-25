@@ -100,12 +100,18 @@
             "defaultValue": 1,
             "toolTip": "Select deployment type for WAF",
             "constraints": {
-              "required": true,
               "allowedValues": [
-                true,
-                false
+                {  
+                  "label": "Value one",
+                  "value": "one"
+                },
+                {
+                  "label": "Value two",
+                  "value": "two"
+                }
               ]
-            }
+            },
+            "visible": true
           },
           {
             "name": "vnetSpec",
