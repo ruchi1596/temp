@@ -138,7 +138,8 @@
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
-                  "requireContiguousAddresses": true
+                  "requireContiguousAddresses": true,
+                  "visible": "[steps('DeployConfig').isMultinic]"
                 }
               }
             }
