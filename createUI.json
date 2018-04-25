@@ -97,17 +97,17 @@
             "name": "isMultinic",
             "type": "Microsoft.Compute.DropDown",
             "label": "Type of Deployment",
-            "defaultValue": 1,
+            "defaultValue": false,
             "toolTip": "Select deployment type for WAF",
             "constraints": {
               "allowedValues": [
                 {  
-                  "label": "Value one",
-                  "value": "one"
+                  "label": "Single Nic",
+                  "value": false
                 },
                 {
-                  "label": "Value two",
-                  "value": "two"
+                  "label": "Multi Nic",
+                  "value": true
                 }
               ]
             },
