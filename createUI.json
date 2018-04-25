@@ -7,7 +7,7 @@
       {
         "name": "wafvmname",
         "type": "Microsoft.Common.TextBox",
-        "label": "WAF Instance Host Name",
+        "label": "WAF Host Name",
         "toolTip": "Provide host name for the newly created instance of Barracuda Web Application Firewall",
         "defaultValue": "bwaf",
         "constraints": {
