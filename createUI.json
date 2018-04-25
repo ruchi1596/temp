@@ -94,6 +94,20 @@
             }
           },
           {
+            "name": "isMultinic",
+            "type": "Microsoft.Compute.DropDown",
+            "label": "Type of Deployment",
+            "defaultValue": 1,
+            "toolTip": "Select deployment type for WAF",
+            "constraints": {
+              "required": true,
+              "allowedValues": [
+                true,
+                false
+              ]
+            }
+          },
+          {
             "name": "vnetSpec",
             "type": "Microsoft.Network.VirtualNetworkCombo",
             "label": {
@@ -164,6 +178,7 @@
       "storageAccountName": "[steps( 'DeployConfig' ).storageElement.name]",
       "storageAccountType": "[steps('DeployConfig').storageElement.type]",
       "vmSize": "[steps('DeployConfig').standardVmSize]",
+      "isMultiNic": "[steps('DeployConfig').isMultinic]",
       "vNETName": "[steps('DeployConfig').vnetSpec.name]",
       "subnetName": "[steps('DeployConfig').vnetSpec.subnets.subnet0.name]",
       "subnet2Name": "[steps('DeployConfig').vnetSpec.subnets.subnet1.name]",
