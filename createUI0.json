@@ -37,7 +37,6 @@
         "name": "isMultinic",
         "type": "Microsoft.Common.DropDown",
         "label": "Type of Deployment",
-        "defaultValue": 1,
         "toolTip": "Select deployment type for WAF",
         "constraints": {
           "required": true,
@@ -145,7 +144,7 @@
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
                   "requireContiguousAddresses": true,
-                  "visible": "[basics('isMultinic').value]"
+                  "visible": "[basics('isMultinic')]"
                 }
               }
             }
