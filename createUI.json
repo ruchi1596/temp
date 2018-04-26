@@ -95,7 +95,7 @@
           },
           {
             "name": "isMultinic",
-            "type": "Microsoft.Compute.DropDown",
+            "type": "Microsoft.Common.DropDown",
             "label": "Type of Deployment",
             "toolTip": "Select deployment type for WAF",
             "constraints": {
