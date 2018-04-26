@@ -35,18 +35,24 @@
       },
       {
         "name": "isMultinic",
-        "type": "Microsoft.Compute.DropDown",
+        "type": "Microsoft.Common.DropDown",
         "label": "Type of Deployment",
         "defaultValue": 1,
         "toolTip": "Select deployment type for WAF",
         "constraints": {
           "required": true,
           "allowedValues": [
-            true,
-            false
+            {  
+              "label": "Single Nic",
+              "value": false
+            },
+            {
+              "label": "Multi Nic",
+              "value": true
+            }
           ]
         }
-      },
+      }
     ],
     "steps": [
       {
@@ -139,7 +145,7 @@
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
                   "requireContiguousAddresses": true,
-                  "visible": "[bool(steps('isMultinic'))]"
+                  "visible": "[basics('isMultinic').value]"
                 }
               }
             }
