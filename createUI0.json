@@ -37,6 +37,7 @@
         "name": "isMultinic",
         "type": "Microsoft.Common.DropDown",
         "label": "Type of Deployment",
+        "defaultValue": "Single Nic",
         "toolTip": "Select deployment type for WAF",
         "constraints": {
           "required": true,
