@@ -143,6 +143,7 @@
                 "label": "WAF backend Subnet",
                 "constraints": {
                   "minAddressPrefixSize": "/24",
+                  "minAddressCount": 0,
                   "requireContiguousAddresses": true,
                   "visible": false
                 }
