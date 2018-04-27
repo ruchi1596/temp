@@ -143,6 +143,7 @@
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
+                  "requireContiguousAddresses": true,
                   "visible": false
                 }
               }
