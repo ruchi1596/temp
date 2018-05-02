@@ -140,12 +140,12 @@
                 }
               },
               "subnet1": {
+                "required": false,
                 "label": "WAF backend Subnet",
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 0,
-                  "requireContiguousAddresses": true,
-                  "visible": false
+                  "requireContiguousAddresses": true
                 }
               }
             }
