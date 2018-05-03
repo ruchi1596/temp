@@ -116,6 +116,7 @@
           {
             "name": "vnetSpec",
             "type": "Microsoft.Network.VirtualNetworkCombo",
+            "required": false,
             "label": {
               "virtualNetwork": "Virtual network to be created for this deployment",
               "subnets": "Subnets to be used in this deployment"
