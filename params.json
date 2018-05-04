@@ -1,0 +1,51 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "location": {
+        "value": "eastus"
+      },
+      "vmName": {
+        "value": "bwaf"
+      },
+      "networkInterfaceType": {
+        "value": true
+      },
+      "storageAccountName": {
+        "value": "gbnjk"
+      },
+      "storageAccountType": {
+        "value": "Standard_LRS"
+      },
+      "vmSize": {
+        "value": "Standard_D2"
+      },
+      "vNETName": {
+        "value": "bghuyt"
+      },
+      "subnetName": {
+        "value": "fgbgf"
+      },
+      "subnet2Name": {
+        "value": "dfgbg"
+      },
+      "dnsNameForIP": {
+        "value": "dcasnjj"
+      },
+      "publicIPAddressName": {
+        "value": "wafpip"
+      },
+      "adminPassword": {
+        "value": "Plzbhagwan@123"
+      },
+      "subnetPrefix": {
+        "value": "10.21.0.0/24"
+      },
+      "subnet2Prefix": {
+        "value": "10.21.1.0/24"
+      },
+      "addressPrefix": {
+        "value": "10.21.0.0/16"
+      }
+    }
+}
