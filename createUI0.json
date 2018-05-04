@@ -117,6 +117,7 @@
             "name": "vnetSpec",
             "type": "Microsoft.Network.VirtualNetworkCombo",
             "required": false,
+            "visible": "[not(basics('isMultinic'))]",
             "label": {
               "virtualNetwork": "Virtual network to be created for this deployment",
               "subnets": "Subnets to be used in this deployment"
@@ -162,11 +163,19 @@
               "minAddressPrefixSize": "/16"
             },
             "subnets": {
+              "subnet0": {
+                "label": "WAF Subnet",
+                "constraints": {
+                  "minAddressPrefixSize": "/24",
+                  "minAddressCount": 1,
+                  "requireContiguousAddresses": true
+                }
+              },
               "subnet1": {
                 "label": "WAF Subnet",
                 "constraints": {
                   "minAddressPrefixSize": "/24",
-                  "minAddressCount": 4,
+                  "minAddressCount": 1,
                   "requireContiguousAddresses": true
                 }
               }
