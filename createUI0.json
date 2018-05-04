@@ -166,7 +166,7 @@
                 "label": "WAF Subnet",
                 "constraints": {
                   "minAddressPrefixSize": "/24",
-                  "minAddressCount": 1,
+                  "minAddressCount": 2,
                   "requireContiguousAddresses": true
                 }
               }
