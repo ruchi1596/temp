@@ -134,7 +134,7 @@
             }
           },
           {
-            "name": "vnetSpec",
+            "name": "vnetSpec1",
             "type": "Microsoft.Network.VirtualNetworkCombo",
             "required": false,
             "visible": "[not(basics('isMultinic'))]",
