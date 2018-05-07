@@ -110,7 +110,7 @@
               ]
             },
             "options": {
-              "hideExisting": true
+              "hideExisting": false
             }
           },
           {
@@ -127,7 +127,7 @@
               "subnets": "Create a separate for the Barracuda WAF"
             },
             "options": {
-              "hideExisting": true
+              "hideExisting": false
             },
             "constraints": {
               "minAddressPrefixSize": "/16"
@@ -157,7 +157,7 @@
               "subnets": "Create a separate for the Barracuda WAF"
             },
             "options": {
-              "hideExisting": true
+              "hideExisting": false
             },
             "constraints": {
               "minAddressPrefixSize": "/16"
