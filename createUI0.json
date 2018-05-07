@@ -34,6 +34,26 @@
         }
       },
       {
+        "name": "licenseType",
+        "type": "Microsoft.Common.DropDown",
+        "label": "Type of Deployment",
+        "defaultValue": "BYOL",
+        "toolTip": "Select deployment type for WAF",
+        "constraints": {
+          "required": true,
+          "allowedValues": [
+            {
+              "label": "BYOL",
+              "value": "BYOL"
+            },
+            {
+              "label": "Hourly",
+              "value": "Hourly"
+            }
+          ]
+        }
+      },
+      {
         "name": "isMultinic",
         "type": "Microsoft.Common.DropDown",
         "label": "Type of Deployment",
@@ -213,6 +233,7 @@
     "outputs": {
       "location": "[location()]",
       "vmName": "[basics('wafvmname')]",
+      "deploymentType": "[basics('licenseType')]",
       "networkInterfaceType": "[basics('isMultinic')]",
       "storageAccountName": "[steps( 'DeployConfig' ).storageElement.name]",
       "storageAccountType": "[steps('DeployConfig').storageElement.type]",
