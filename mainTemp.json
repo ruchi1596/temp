@@ -103,8 +103,8 @@
 		"networkInterfaceType": {
 			"type": "string",
 			"allowedValues": [
-				true,
-				false
+				false,
+				true
 			],
 			"defaultValue": false,
 			"metadata": {
