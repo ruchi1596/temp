@@ -272,7 +272,7 @@
 				"count": "[if(equals(parameters('networkInterfaceType'),false),1, 2)]"
 			},
 			"type": "Microsoft.Network/networkInterfaces",
-			"name": "[if(equals(copyIndex(''),0),variables('nicName0Prefix'), variables('nicName1Prefix'))]",
+			"name": "[if(equals(copyIndex(),0),variables('nicName0Prefix'), variables('nicName1Prefix'))]",
 			"location": "[parameters('location')]",
 			"tags": {
 				"provider": "[variables('barracudaNetworksTags').provider]"
@@ -283,12 +283,12 @@
 			],
 			"properties": {
 				"ipConfigurations": [{
-					"name": "[concat('ipconfig', copyIndex(''))]",
+					"name": "[concat('ipconfig', copyIndex())]",
 					"properties": {
 						"privateIPAllocationMethod": "Dynamic",
-						"publicIPAddress": "[if(equals(copyIndex(''),0),variables('publicIp1'), json('null'))]",
+						"publicIPAddress": "[if(equals(copyIndex(),0),variables('publicIp1'), json('null'))]",
 						"subnet": {
-							"id": "[if(equals(copyIndex(''),0),variables('subnet0Ref'), variables('subnet1Ref'))]"
+							"id": "[if(equals(copyIndex(),0),variables('subnet0Ref'), variables('subnet1Ref'))]"
 						}
 					}
 				}]
