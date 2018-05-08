@@ -115,7 +115,8 @@
 			"type": "string"
 		},
 		"subnet2Name": {
-			"type": "string"
+			"type": "string",
+                        "defaultValue": "null"
 		},
 		"vmSize": {
 			"type": "string",
