@@ -101,7 +101,7 @@
 			}
 		},
 		"networkInterfaceType": {
-			"type": "string",
+			"type": "bool",
 			"allowedValues": [
 				false,
 				true
