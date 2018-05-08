@@ -183,7 +183,7 @@
 				},
 				"copy": [{
 					"name": "subnets",
-					"count": "[if(equals(parameters('networkInterfaceType'),false),1, 2)]",
+					"count": "[if(equals(parameters('networkInterfaceType'),bool('false')),1, 2)]",
 					"input": {
 						"name": "[if(equals(copyIndex('subnets'),0),parameters('subnetName'), parameters('subnet2Name'))]",
 						"properties": {
