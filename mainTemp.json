@@ -269,7 +269,7 @@
 			"apiVersion": "2016-06-01",
 			"copy": {
 				"name": "nicloop",
-				"count": "[if(equals(parameters('networkInterfaceType'),false),1, 2)]"
+				"count": "[if(equals(parameters('networkInterfaceType'),bool('false')),1, 2)]"
 			},
 			"type": "Microsoft.Network/networkInterfaces",
 			"name": "[if(equals(copyIndex(),0),variables('nicName0Prefix'), variables('nicName1Prefix'))]",
@@ -339,7 +339,7 @@
 				"networkProfile": {
 					"copy": [{
 						"name": "networkInterfaces",
-						"count": "[if(equals(parameters('networkInterfaceType'),false),1, 2)]",
+						"count": "[if(equals(parameters('networkInterfaceType'),bool('false')),1, 2)]",
 						"input": {
 							"id": "[if(equals(copyIndex('networkInterfaces'),0),variables('netPro0'), variables('netPro1'))]",
 							"properties": {
