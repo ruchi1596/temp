@@ -100,6 +100,13 @@
 				"description": "Subnet prefix of the network for Barracuda VM."
 			}
 		},
+                "subnetPrefix": {
+                        "defaultValue": "10.0.0.0/24",
+                        "type": "string",
+                        "metadata": {
+                                "description": "Subnet prefix of the network for Barracuda VM."
+                        }
+                },
 		"networkInterfaceType": {
 			"type": "bool",
 			"allowedValues": [
