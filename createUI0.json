@@ -7,7 +7,7 @@
       {
         "name": "wafvmname",
         "type": "Microsoft.Common.TextBox",
-        "label": "WAF Instance Host Name",
+        "label": "Barracuda CloudGen WAF Instance Host Name",
         "toolTip": "Provide host name for the newly created instance of Barracuda Web Application Firewall",
         "defaultValue": "bwaf",
         "constraints": {
@@ -23,7 +23,7 @@
           "password": "Password",
           "confirmPassword": "Confirm password"
         },
-        "toolTip": "Provide password for WAF Admin UI",
+        "toolTip": "Provide password for Barracuda CloudGen WAF Admin UI",
         "constraints": {
           "required": true,
           "regex": "^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\\d\\W])|(?=.*\\W)(?=.*\\d))|(?=.*\\W)(?=.*[A-Z])(?=.*\\d)).{12,72}$",
@@ -38,7 +38,7 @@
         "type": "Microsoft.Common.DropDown",
         "label": "Type of Deployment",
         "defaultValue": "BYOL",
-        "toolTip": "Select deployment type for WAF",
+        "toolTip": "Select deployment type for Barracuda CloudGen WAF",
         "constraints": {
           "required": true,
           "allowedValues": [
@@ -58,7 +58,7 @@
         "type": "Microsoft.Common.DropDown",
         "label": "Type of Deployment",
         "defaultValue": "Single Nic",
-        "toolTip": "Select deployment type for WAF",
+        "toolTip": "Select deployment type for Barracuda CloudGen WAF",
         "constraints": {
           "required": true,
           "allowedValues": [
@@ -87,7 +87,7 @@
           {
             "name": "standardVmSize",
             "type": "Microsoft.Compute.SizeSelector",
-            "label": "WAF Instance Size",
+            "label": "Barracuda CloudGen WAF Instance Size",
             "toolTip": "Choose the instance size you require for your deployment",
             "recommendedSizes": [
               "Standard_D2",
@@ -144,7 +144,7 @@
             },
             "toolTip": {
               "virtualNetwork": "Virtual Network Name",
-              "subnets": "Create a separate for the Barracuda WAF"
+              "subnets": "Create a separate for the Barracuda CloudGen WAF"
             },
             "options": {
               "hideExisting": false
@@ -154,7 +154,7 @@
             },
             "subnets": {
               "subnet0": {
-                "label": "WAF Subnet",
+                "label": "WAN IP",
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
@@ -174,7 +174,7 @@
             },
             "toolTip": {
               "virtualNetwork": "Virtual Network Name",
-              "subnets": "Create a separate for the Barracuda WAF"
+              "subnets": "Create a separate for the Barracuda CloudGen WAF"
             },
             "options": {
               "hideExisting": false
@@ -184,7 +184,7 @@
             },
             "subnets": {
               "subnet0": {
-                "label": "WAF Subnet",
+                "label": "WAN IP",
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
@@ -192,7 +192,7 @@
                 }
               },
               "subnet1": {
-                "label": "WAF Subnet",
+                "label": "LAN IP",
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
@@ -206,11 +206,11 @@
             "type": "Microsoft.Network.PublicIpAddressCombo",
             "label": {
               "publicIpAddress": "New Public IP address name",
-              "domainNameLabel": "Domain name for accessing the WAF"
+              "domainNameLabel": "Domain name for accessing the Barracuda CloudGen WAF"
             },
             "toolTip": {
               "publicIpAddress": "Only new public IP is currently supported",
-              "domainNameLabel": "WAF UI will be accessible from port 8000 or 8443 of this domain"
+              "domainNameLabel": "Barracuda CloudGen WAF UI will be accessible from port 8000 or 8443 of this domain"
             },
             "defaultValue": {
               "publicIpAddressName": "wafpip",
