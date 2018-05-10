@@ -92,28 +92,28 @@
                         "defaultValue": "null"
                 },
 		"addressPrefix": {
-			"defaultValue": "10.0.0.0/16",
+			"defaultValue": "10.21.0.0/16",
 			"type": "string",
 			"metadata": {
 				"description": "Address prefix of the network for Barracuda VM."
 			}
 		},
 		"subnetPrefix": {
-			"defaultValue": "10.0.0.0/24",
+			"defaultValue": "10.21.0.0/24",
 			"type": "string",
 			"metadata": {
 				"description": "Subnet prefix of the network for Barracuda VM."
 			}
 		},
                 "subnet1Prefix": {
-                        "defaultValue": "10.0.0.0/24",
+                        "defaultValue": "10.21.0.0/24",
                         "type": "string",
                         "metadata": {
                                 "description": "Subnet prefix of the network for Barracuda VM."
                         }
                 },
                 "subnet2Prefix": {
-                        "defaultValue": "10.0.1.0/24",
+                        "defaultValue": "10.21.1.0/24",
                         "type": "string",
                         "metadata": {
                                 "description": "Subnet prefix of the network for Barracuda VM."
