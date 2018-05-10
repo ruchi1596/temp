@@ -156,7 +156,7 @@
               "subnet0": {
                 "label": "WAN NIC Name",
                 "defaultValue": {
-                  "name": "wannic"
+                  "name": "wannic",
                   "addressPrefix": "10.0.0.0/24"
                 },
                 "constraints": {
