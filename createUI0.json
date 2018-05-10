@@ -156,7 +156,7 @@
               "subnet0": {
                 "label": "WAN NIC Name",
                 "defaultValue": {
-                  "name": "WAN"
+                  "name": "wannic"
                 },
                 "constraints": {
                   "minAddressPrefixSize": "/24",
@@ -188,6 +188,9 @@
             "subnets": {
               "subnet0": {
                 "label": "WAN NIC Name",
+                "defaultValue": {
+                  "name": "wannic"
+                },
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
@@ -196,6 +199,9 @@
               },
               "subnet1": {
                 "label": "LAN NIC Name",
+                "defaultValue": {
+                  "name": "lannic"
+                },
                 "constraints": {
                   "minAddressPrefixSize": "/24",
                   "minAddressCount": 1,
