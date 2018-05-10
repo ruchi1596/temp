@@ -56,9 +56,9 @@
       {
         "name": "isMultinic",
         "type": "Microsoft.Common.DropDown",
-        "label": "Type of Deployment",
+        "label": "Number of interfaces for the instance",
         "defaultValue": "Single Nic",
-        "toolTip": "Select deployment type for Barracuda CloudGen WAF",
+        "toolTip": "Select number of network interfaces for your Barracuda CloudGen WAF instance. Selecting the Multi-Nic option, will create an instance with a WAN and a LAN interface.",
         "constraints": {
           "required": true,
           "allowedValues": [
