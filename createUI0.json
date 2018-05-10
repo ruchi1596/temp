@@ -36,18 +36,18 @@
       {
         "name": "licenseType",
         "type": "Microsoft.Common.DropDown",
-        "label": "Type of Deployment",
+        "label": "Billing Method",
         "defaultValue": "BYOL",
-        "toolTip": "Select deployment type for Barracuda CloudGen WAF",
+        "toolTip": "Select the billing method for this deployment. To use BYoL, you will have to contact Barracuda Netwroks for a license key",
         "constraints": {
           "required": true,
           "allowedValues": [
             {
-              "label": "BYOL",
+              "label": "Bring your own License (BYoL)",
               "value": "BYOL"
             },
             {
-              "label": "Hourly",
+              "label": "Pay as You Go (Hourly Billing)",
               "value": "Hourly"
             }
           ]
