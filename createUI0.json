@@ -157,6 +157,7 @@
                 "label": "WAN NIC Name",
                 "defaultValue": {
                   "name": "wannic"
+                  "addressPrefix": "10.0.0.0/24"
                 },
                 "constraints": {
                   "minAddressPrefixSize": "/24",
