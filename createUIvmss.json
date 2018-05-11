@@ -44,11 +44,11 @@
                     "allowedValues": [
                         {
                             "label": "BYOL",
-                            "value": true
+                            "value": "BYOL"
                         },
                         {
                             "label": "Hourly",
-                            "value": false
+                            "value": "Hourly"
                         }
                     ]
                 }
@@ -460,7 +460,7 @@
             {
                 "name": "azureLicenseSettings",
                 "label": "WAF BYOL licenses Configuration",
-                "visible": "[basics('licenseType')]",
+                "visible": "[equals(basics('licenseType')), 'BYOL')]",
                 "subLabel": {
                     "preValidation": "BYOL License(s) Storage Details",
                     "postValidation": "Done"
@@ -647,7 +647,7 @@
                         "name": "eulaDetails",
                         "type": "Microsoft.Common.Section",
                         "label": "EULA Acceptance Details",
-                        "visible": "[basics('licenseType')]",
+                        "visible": "[equals(basics('licenseType')), 'BYOL']",
                         "elements": [
                             {
                                 "name": "eulaUserName",
