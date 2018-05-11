@@ -458,19 +458,19 @@
                 ]
             },
             {
-                "name": "azureLicenseSettings",
-                "label": "WAF BYOL licenses Configuration",
-                "visible": "[equals(basics('licenseType')), 'BYOL')]",
+                "name": "wafBootStrapSettings",
+                "label": "WAF Bootstrap Configuration",
                 "subLabel": {
-                    "preValidation": "BYOL License(s) Storage Details",
+                    "preValidation": "Define the bootstrap configuration for VMSS group",
                     "postValidation": "Done"
                 },
-                "bladeTitle": "BYOL License(s) Details",
+                "bladeTitle": "WAF Bootstrap Settings",
                 "elements": [
                     {
                         "name": "licenseStorageAccountName",
                         "type": "Microsoft.Common.TextBox",
                         "label": "Specify storage account where license file is stored.",
+                        "visible": "[equals(basics('licenseType')), 'BYOL']",
                         "toolTip": "License Storage Account Name",
                         "constraints": {
                             "required": true,
@@ -482,6 +482,7 @@
                         "name": "licenseStorageAccountKey",
                         "type": "Microsoft.Common.TextBox",
                         "label": "License Storage Account Key",
+                        "visible": "[equals(basics('licenseType')), 'BYOL']",
                         "toolTip": "Specify storage account key for the account configured.",
                         "constraints": {
                             "required": true,
@@ -493,23 +494,13 @@
                         "name": "licenseContainerName",
                         "type": "Microsoft.Common.TextBox",
                         "label": "License Storage Blob Name",
+                        "visible": "[equals(basics('licenseType')), 'BYOL']",
                         "toolTip": "Specify Blob name where backup file is stored.",
                         "constraints": {
                             "required": true,
                             "regex": "^(?!\\s*$).+"
                         }
-                    }
-                ]
-            },
-            {
-                "name": "wafBootStrapSettings",
-                "label": "WAF Bootstrap Configuration",
-                "subLabel": {
-                    "preValidation": "Define the bootstrap configuration for VMSS group",
-                    "postValidation": "Done"
-                },
-                "bladeTitle": "WAF Bootstrap Settings",
-                "elements": [
+                    },
                     {
                         "name": "wafSharedSecret",
                         "type": "Microsoft.Common.PasswordBox",
@@ -647,7 +638,6 @@
                         "name": "eulaDetails",
                         "type": "Microsoft.Common.Section",
                         "label": "EULA Acceptance Details",
-                        "visible": "[equals(basics('licenseType')), 'BYOL']",
                         "elements": [
                             {
                                 "name": "eulaUserName",
