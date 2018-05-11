@@ -454,18 +454,7 @@
                                 }
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "name": "wafBootStrapSettings",
-                "label": "WAF Bootstrap Configuration",
-                "subLabel": {
-                    "preValidation": "Define the bootstrap configuration for VMSS group",
-                    "postValidation": "Done"
-                },
-                "bladeTitle": "WAF Bootstrap Settings",
-                "elements": [
+                    },
                     {
                         "name": "licenseStorageAccountName",
                         "type": "Microsoft.Common.TextBox",
@@ -500,7 +489,18 @@
                             "required": true,
                             "regex": "^(?!\\s*$).+"
                         }
-                    },
+                    }
+                ]
+            },
+            {
+                "name": "wafBootStrapSettings",
+                "label": "WAF Bootstrap Configuration",
+                "subLabel": {
+                    "preValidation": "Define the bootstrap configuration for VMSS group",
+                    "postValidation": "Done"
+                },
+                "bladeTitle": "WAF Bootstrap Settings",
+                "elements": [
                     {
                         "name": "wafSharedSecret",
                         "type": "Microsoft.Common.PasswordBox",
