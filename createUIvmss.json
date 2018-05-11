@@ -32,6 +32,26 @@
                 "options": {
                     "hideConfirmation": false
                 }
+            },
+            {
+                "name": "licenseType",
+                "type": "Microsoft.Common.DropDown",
+                "label": "Type of Deployment",
+                "defaultValue": "BYOL",
+                "toolTip": "Select deployment type for Barracuda CloudGen WAF",
+                "constraints": {
+                    "required": true,
+                    "allowedValues": [
+                        {
+                            "label": "BYOL",
+                            "value": "BYOL"
+                        },
+                        {
+                            "label": "Hourly",
+                            "value": "Hourly"
+                        }
+                    ]
+                }
             }
         ],
         "steps": [
@@ -838,6 +858,7 @@
             "location": "[location()]",
             "vmssName": "[basics('wafvmssName')]",
             "adminPassword": "[basics('Password')]",
+            "billingMethod": "[basics('licenseType')]",
             "vmSku": "[steps('DeployConfig').standardVmSize]",
             "storageAccountName": "[steps( 'DeployConfig' ).storageElement.name]",
             "storageAccountType": "[steps('DeployConfig').storageElement.type]",
