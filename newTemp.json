@@ -46,7 +46,7 @@
 			"type": "string",
 			"allowedValues": [
 				"BYOL",
-				"PAYG"
+				"Hourly"
 			],
 			"defaultValue": "BYOL",
 			"metadata": {
