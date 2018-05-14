@@ -201,7 +201,6 @@
                         "name": "licenseStorageAccountName",
                         "type": "Microsoft.Common.TextBox",
                         "label": "Specify storage account where license file is stored.",
-                        "visible": "[equals(basics('licenseType')), 'BYOL']",
                         "toolTip": "License Storage Account Name",
                         "constraints": {
                             "required": true,
@@ -213,7 +212,6 @@
                         "name": "licenseStorageAccountKey",
                         "type": "Microsoft.Common.TextBox",
                         "label": "License Storage Account Key",
-                        "visible": "[equals(basics('licenseType')), 'BYOL']",
                         "toolTip": "Specify storage account key for the account configured.",
                         "constraints": {
                             "required": true,
@@ -225,7 +223,6 @@
                         "name": "licenseContainerName",
                         "type": "Microsoft.Common.TextBox",
                         "label": "License Storage Blob Name",
-                        "visible": "[equals(basics('licenseType')), 'BYOL']",
                         "toolTip": "Specify Blob name where backup file is stored.",
                         "constraints": {
                             "required": true,
