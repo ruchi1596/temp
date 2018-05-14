@@ -201,6 +201,7 @@
                         "name": "licenseStorageAccountName",
                         "type": "Microsoft.Common.TextBox",
                         "label": "Specify storage account where license file is stored.",
+                        "visible": "[bool(equals(basics('licenseType')), 'byol')]",
                         "toolTip": "License Storage Account Name",
                         "constraints": {
                             "required": true,
