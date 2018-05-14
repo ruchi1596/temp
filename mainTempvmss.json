@@ -22,6 +22,17 @@
         "description": "Size of VMs in the VM Scale Set."
       }
     },
+    "billingMethod": {
+      "type": "string",
+      "allowedValues": [
+        "byol",
+        "hourly"
+      ],
+      "defaultValue": "byol",
+      "metadata": {
+        "description": "Type of Deployment"
+      }
+    },
     "storageAccountName": {
       "type": "string",
       "metadata": {
