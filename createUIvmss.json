@@ -205,7 +205,8 @@
                         "constraints": {
                             "regex": "^[a-z0-9]{3,24}$",
                             "validationMessage": "valid storage account name."
-                        }
+                        },
+                        "visible": false
                     },
                     {
                         "name": "licenseStorageAccountKey",
@@ -215,7 +216,8 @@
                         "constraints": {
                             "regex": ".{6,}",
                             "validationMessage": "valid storage account key to access license file."
-                        }
+                        },
+                        "visible": false
                     },
                     {
                         "name": "licenseContainerName",
@@ -224,7 +226,8 @@
                         "toolTip": "Specify Blob name where backup file is stored.",
                         "constraints": {
                             "regex": "^(?!\\s*$).+"
-                        }
+                        },
+                        "visible": false
                     }
                 ]
             },
