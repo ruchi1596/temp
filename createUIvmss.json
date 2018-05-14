@@ -94,11 +94,115 @@
                         "imageReference": {
                             "publisher": "barracudanetworks",
                             "offer": "waf",
-                            "sku": "[basics('licenseType')), 'byol')]"
+                            "sku": "[basics('licenseType')]"
                         },
+                        "count": 1,
+                        "visible": true
+                    },
+                    {
+                        "name": "storageElement",
+                        "type": "Microsoft.Storage.StorageAccountSelector",
+                        "label": "Storage Account that will be used to store data for this deployment",
+                        "toolTip": "Choose Standard_LRS for Standard VM Selections",
+                        "defaultValue": {
+                            "type": "Standard_LRS"
+                        },
+                        "constraints": {
+                            "allowedTypes": [
+                                "Standard_LRS"
+                            ]
+                        },
+                        "options": {
+                            "hideExisting": false
+                        }
+                    },
+                    {
+                        "name": "vnetSpec",
+                        "type": "Microsoft.Network.VirtualNetworkCombo",
+                        "label": {
+                            "virtualNetwork": "Virtual network to be created for this deployment",
+                            "subnets": "Subnets to be used in this deployment"
+                        },
+                        "toolTip": {
+                            "virtualNetwork": "Virtual Network Name",
+                            "subnets": "Create a separate for the Barracuda WAF"
+                        },
+                        "defaultValue": {
+                            "name": "wafVnet",
+                            "addressPrefixSize": "/16"
+                        },
+                        "options": {
+                            "hideExisting": false
+                        },
+                        "constraints": {
+                            "minAddressPrefixSize": "/16"
+                        },
+                        "subnets": {
+                            "subnet0": {
+                                "label": "WAF Subnet",
+                                "defaultValue": {
+                                    "name": "wafSubnet",
+                                    "addressPrefixSize": "/24"
+                                },
+                                "constraints": {
+                                    "minAddressPrefixSize": "/24",
+                                    "minAddressCount": 1,
+                                    "requireContiguousAddresses": true
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "dnsSpec",
+                        "type": "Microsoft.Network.PublicIpAddressCombo",
+                        "label": {
+                            "publicIpAddress": "New Public IP address name",
+                            "domainNameLabel": "Domain name for accessing the WAF"
+                        },
+                        "toolTip": {
+                            "publicIpAddress": "Only new public IP is currently supported",
+                            "domainNameLabel": "WAF UI will be accessible from port 8000 or 8443 of this domain"
+                        },
+                        "defaultValue": {
+                            "publicIpAddressName": "wafpip",
+                            "domainNameLabel": "change-me-to-be-unique"
+                        },
+                        "constraints": {
+                            "required": {
+                                "domainNameLabel": true
+                            }
+                        },
+                        "options": {
+                            "hideDomainNameLabel": false,
+                            "hideNone": true,
+                            "hideExisting": true
+                        }
+                    },
+                    {
+                        "name": "bootDiagnostics",
+                        "type": "Microsoft.Common.OptionsGroup",
+                        "label": "Boot diagnostics",
+                        "defaultValue": "Disabled",
+                        "toolTip": "Capture serial console output and screenshots of the virtual machine running on a host to help diagnose startup issues. This will use storage account configured above.",
+                        "constraints": {
+                            "allowedValues": [
+                                {
+                                    "label": "Enabled",
+                                    "value": true
+                                },
+                                {
+                                    "label": "Disabled",
+                                    "value": false
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "licenseStorageAccountName",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "Specify storage account where license file is stored.",
                         "toolTip": "License Storage Account Name",
                         "constraints": {
-                            "required": true,
                             "regex": "^[a-z0-9]{3,24}$",
                             "validationMessage": "valid storage account name."
                         }
@@ -109,7 +213,6 @@
                         "label": "License Storage Account Key",
                         "toolTip": "Specify storage account key for the account configured.",
                         "constraints": {
-                            "required": true,
                             "regex": ".{6,}",
                             "validationMessage": "valid storage account key to access license file."
                         }
@@ -120,7 +223,6 @@
                         "label": "License Storage Blob Name",
                         "toolTip": "Specify Blob name where backup file is stored.",
                         "constraints": {
-                            "required": true,
                             "regex": "^(?!\\s*$).+"
                         }
                     }
