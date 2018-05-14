@@ -107,7 +107,6 @@
                         "name": "licenseStorageAccountKey",
                         "type": "Microsoft.Common.TextBox",
                         "label": "License Storage Account Key",
-                        "visible": false,
                         "toolTip": "Specify storage account key for the account configured.",
                         "constraints": {
                             "required": true,
