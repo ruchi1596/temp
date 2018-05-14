@@ -44,11 +44,11 @@
                     "allowedValues": [
                         {
                             "label": "BYOL",
-                            "value": "BYOL"
+                            "value": "byol"
                         },
                         {
                             "label": "Hourly",
-                            "value": "Hourly"
+                            "value": "hourly"
                         }
                     ]
                 }
@@ -64,6 +64,41 @@
                 },
                 "bladeTitle": "Deployment Options",
                 "elements": [
+                    {
+                        "name": "licenseStorageAccountName",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "Specify storage account where license file is stored.",
+                        "visible": "[equals(basics('licenseType')), 'BYOL']",
+                        "toolTip": "License Storage Account Name",
+                        "constraints": {
+                            "required": true,
+                            "regex": "^[a-z0-9]{3,24}$",
+                            "validationMessage": "valid storage account name."
+                        }
+                    },
+                    {
+                        "name": "licenseStorageAccountKey",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "License Storage Account Key",
+                        "visible": "[equals(basics('licenseType')), 'BYOL']",
+                        "toolTip": "Specify storage account key for the account configured.",
+                        "constraints": {
+                            "required": true,
+                            "regex": ".{6,}",
+                            "validationMessage": "valid storage account key to access license file."
+                        }
+                    },
+                    {
+                        "name": "licenseContainerName",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "License Storage Blob Name",
+                        "visible": "[equals(basics('licenseType')), 'BYOL']",
+                        "toolTip": "Specify Blob name where backup file is stored.",
+                        "constraints": {
+                            "required": true,
+                            "regex": "^(?!\\s*$).+"
+                        }
+                    },
                     {
                         "name": "standardVmSize",
                         "type": "Microsoft.Compute.SizeSelector",
@@ -94,7 +129,7 @@
                         "imageReference": {
                             "publisher": "barracudanetworks",
                             "offer": "waf",
-                            "sku": "byol"
+                            "sku": "[basics('licenseType')]"
                         },
                         "count": 1,
                         "visible": true
@@ -114,18 +149,6 @@
                         },
                         "options": {
                             "hideExisting": false
-                        }
-                    },
-                    {
-                        "name": "licenseStorageAccountName",
-                        "type": "Microsoft.Common.TextBox",
-                        "label": "Specify storage account where license file is stored.",
-                        "visible": "[equals(basics('licenseType')), 'BYOL']",
-                        "toolTip": "License Storage Account Name",
-                        "constraints": {
-                            "required": true,
-                            "regex": "^[a-z0-9]{3,24}$",
-                            "validationMessage": "valid storage account name."
                         }
                     },
                     {
@@ -859,9 +882,9 @@
             "azureTenantId": "[steps('azureApiSettings').azureServicePrincipalDetails.azureTenantId]",
             "azureSecretKey": "[steps('azureApiSettings').azureServicePrincipalDetails.azureSecretKey]",
             "wafBootstrapMethod": "[steps('wafBootStrapSettings').bootstrapMethod]",
-            "licenseStorageAccountName": "[steps('azureLicenseSettings').licenseStorageAccountName]",
-            "licenseStorageAccountKey":  "[steps('azureLicenseSettings').licenseStorageAccountKey]",
-            "licenseContainerName":  "[steps('azureLicenseSettings').licenseContainerName]",
+            "licenseStorageAccountName": "[steps('DeployConfig').licenseStorageAccountName]",
+            "licenseStorageAccountKey":  "[steps('DeployConfig').licenseStorageAccountKey]",
+            "licenseContainerName":  "[steps('DeployConfig').licenseContainerName]",
             "azureStorageAccountName": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.azureStorageAccountName]",
             "azureStorageAccountKey": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.azureStorageAccountKey]",
             "azureStorageBlobName": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.azureStorageBlobName]",
