@@ -206,7 +206,7 @@
                             "regex": "^[a-z0-9]{3,24}$",
                             "validationMessage": "valid storage account name."
                         },
-                        "visible": false
+                        "visible": "[equals(basics('licenseType'), 'byol')]"
                     },
                     {
                         "name": "licenseStorageAccountKey",
@@ -217,7 +217,7 @@
                             "regex": ".{6,}",
                             "validationMessage": "valid storage account key to access license file."
                         },
-                        "visible": false
+                        "visible": "[equals(basics('licenseType'), 'byol')]"
                     },
                     {
                         "name": "licenseContainerName",
@@ -227,7 +227,7 @@
                         "constraints": {
                             "regex": "^(?!\\s*$).+"
                         },
-                        "visible": false
+                        "visible": "[equals(basics('licenseType'), 'byol')]"
                     }
                 ]
             },
