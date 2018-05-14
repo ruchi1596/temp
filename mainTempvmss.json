@@ -463,7 +463,7 @@
     "wafClusteringMode": "[if(parameters('azureOverprovisioning'), 'ALL_PEER_METHOD', 'MASTER_SLAVE_METHOD')]",
     "imagePublisher": "barracudanetworks",
     "imageVersion": "latest",
-    "imageSKU": "byol",
+    "imageSKU": "[parameters('billingMethod')]",
     "imageOffer": "waf",
     "useNewStorageAccount": "[equals(parameters('storageAccountNewOrExisting'), 'new')]",
     "useNewVnet": "[equals(parameters('vNETNewOrExisting'), 'new')]",
