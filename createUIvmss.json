@@ -7,7 +7,7 @@
             {
                 "name": "wafvmssName",
                 "type": "Microsoft.Common.TextBox",
-                "label": "WAF VMSS Instance Host Name",
+                "label": "Barracuda CloudGen WAF VMSS Instance Host Name",
                 "toolTip": "Provide host name for the newly created instance of Barracuda Web Application Firewall.",
                 "defaultValue": "bwafvmss",
                 "constraints": {
@@ -23,7 +23,7 @@
                     "password": "Password",
                     "confirmPassword": "Confirm password"
                 },
-                "toolTip": "Provide password for WAF Admin UI.",
+                "toolTip": "Provide password for Barracuda CloudGen WAF Admin UI.",
                 "constraints": {
                     "required": true,
                     "regex": "^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\\d\\W])|(?=.*\\W)(?=.*\\d))|(?=.*\\W)(?=.*[A-Z])(?=.*\\d)).{12,72}$",
@@ -67,7 +67,7 @@
                     {
                         "name": "standardVmSize",
                         "type": "Microsoft.Compute.SizeSelector",
-                        "label": "WAF Instance Size",
+                        "label": "Barracuda CloudGen WAF Instance Size",
                         "toolTip": "Choose the instance size you require for your deployment",
                         "recommendedSizes": [
                             "Standard_D2",
@@ -125,7 +125,7 @@
                         },
                         "toolTip": {
                             "virtualNetwork": "Virtual Network Name",
-                            "subnets": "Create a separate for the Barracuda WAF"
+                            "subnets": "Create a separate for the Barracuda CloudGen WAF"
                         },
                         "defaultValue": {
                             "name": "wafVnet",
@@ -139,7 +139,7 @@
                         },
                         "subnets": {
                             "subnet0": {
-                                "label": "WAF Subnet",
+                                "label": "Barracuda CloudGen WAF Subnet",
                                 "defaultValue": {
                                     "name": "wafSubnet",
                                     "addressPrefixSize": "/24"
@@ -157,11 +157,11 @@
                         "type": "Microsoft.Network.PublicIpAddressCombo",
                         "label": {
                             "publicIpAddress": "New Public IP address name",
-                            "domainNameLabel": "Domain name for accessing the WAF"
+                            "domainNameLabel": "Domain name for accessing the Barracuda CloudGen WAF"
                         },
                         "toolTip": {
                             "publicIpAddress": "Only new public IP is currently supported",
-                            "domainNameLabel": "WAF UI will be accessible from port 8000 or 8443 of this domain"
+                            "domainNameLabel": "Barracuda CloudGen WAF UI will be accessible from port 8000 or 8443 of this domain"
                         },
                         "defaultValue": {
                             "publicIpAddressName": "wafpip",
@@ -250,7 +250,7 @@
                                 "type": "Microsoft.Common.TextBox",
                                 "label": "Initial instances",
                                 "defaultValue": "2",
-                                "toolTip": "Enter the initial number of WAF instances (1-20) to be available at launch time in the vmss group",
+                                "toolTip": "Enter the initial number of Barracuda CloudGen WAF instances (1-20) to be available at launch time in the vmss group",
                                 "constraints": {
                                     "required": true,
                                     "regex": "^([1-9]|1[0-9]|20)$",
@@ -262,7 +262,7 @@
                                 "type": "Microsoft.Common.TextBox",
                                 "label": "Maximum instances",
                                 "defaultValue": "5",
-                                "toolTip": "Enter the maximum number of WAF instances (2-20) that can be created in the vmss group",
+                                "toolTip": "Enter the maximum number of Barracuda CloudGen WAF instances (2-20) that can be created in the vmss group",
                                 "constraints": {
                                     "required": true,
                                     "regex": "^([2-9]|1[0-9]|20)$",
@@ -274,7 +274,7 @@
                                 "type": "Microsoft.Common.TextBox",
                                 "label": "Minimum instances",
                                 "defaultValue": "2",
-                                "toolTip": "Enter the minimum number of WAF instances (1-20) to be available in the vmss group",
+                                "toolTip": "Enter the minimum number of Barracuda CloudGen WAF instances (1-20) to be available in the vmss group",
                                 "constraints": {
                                     "required": true,
                                     "regex": "^([1-9]|1[0-9]|20)$",
@@ -386,7 +386,7 @@
                 "name": "azureApiSettings",
                 "label": "Azure API configuration",
                 "subLabel": {
-                    "preValidation": "Define option for Azure API credentials. These details will be used by WAF to make azure API calls.",
+                    "preValidation": "Define option for Azure API credentials. These details will be used by Barracuda CloudGen WAF to make azure API calls.",
                     "postValidation": "Done"
                 },
                 "bladeTitle": "Azure Credential Settings",
@@ -491,12 +491,12 @@
             },
             {
                 "name": "wafBootStrapSettings",
-                "label": "WAF Bootstrap Configuration",
+                "label": "Barracuda CloudGen WAF Bootstrap Configuration",
                 "subLabel": {
                     "preValidation": "Define the bootstrap configuration for VMSS group",
                     "postValidation": "Done"
                 },
-                "bladeTitle": "WAF Bootstrap Settings",
+                "bladeTitle": "Barracuda CloudGen WAF Bootstrap Settings",
                 "elements": [
                     {
                         "name": "wafSharedSecret",
@@ -547,7 +547,7 @@
                             {
                                 "name": "wafServiceName",
                                 "type": "Microsoft.Common.TextBox",
-                                "label": "WAF Service Name",
+                                "label": "Barracuda CloudGen WAF Service Name",
                                 "defaultValue": "bwaf_service_1",
                                 "toolTip": "Specify the service name to be created",
                                 "constraints": {
@@ -559,7 +559,7 @@
                             {
                                 "name": "wafServicePort",
                                 "type": "Microsoft.Common.TextBox",
-                                "label": "WAF Service Port",
+                                "label": "Barracuda CloudGen WAF Service Port",
                                 "defaultValue": "80",
                                 "toolTip": "Specify Port to be used for service creation",
                                 "constraints": {
@@ -622,8 +622,8 @@
                             {
                                 "name": "wafBackupFileName",
                                 "type": "Microsoft.Common.TextBox",
-                                "label": "Barracuda WAF Backup File Name",
-                                "toolTip": "Specify WAF Backup file to be used for WAF bootstrapping.",
+                                "label": "Barracuda CloudGen WAF Backup File Name",
+                                "toolTip": "Specify Barracuda CloudGen WAF Backup file to be used for Barracuda CloudGen WAF bootstrapping.",
                                 "constraints": {
                                     "required": true,
                                     "regex" : "^BAR-WF.*.bak$"
@@ -687,7 +687,7 @@
                                 "name": "omsWorkspaceId",
                                 "type": "Microsoft.Common.TextBox",
                                 "label": "OMS workspace ID",
-                                "toolTip": "Specify OMS workspace ID where Barracuda WAF logs will be sent",
+                                "toolTip": "Specify OMS workspace ID where Barracuda CloudGen WAF logs will be sent",
                                 "constraints": {
                                     "required": false,
                                     "regex": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
