@@ -8,7 +8,7 @@
                 "name": "wafvmssName",
                 "type": "Microsoft.Common.TextBox",
                 "label": "Barracuda CloudGen WAF VMSS Instance Host Name",
-                "toolTip": "Provide host name for the newly created instance of Barracuda Web Application Firewall.",
+                "toolTip": "Provide host name for the newly created instance of Barracuda CloudGen Web Application Firewall.",
                 "defaultValue": "bwafvmss",
                 "constraints": {
                     "required": true,
