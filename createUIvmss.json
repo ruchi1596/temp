@@ -204,6 +204,7 @@
                         "defaultValue": "change-me",
                         "toolTip": "License Storage Account Name",
                         "constraints": {
+                            "required": true,
                             "regex": "^[a-z0-9]{3,24}$",
                             "validationMessage": "valid storage account name."
                         },
