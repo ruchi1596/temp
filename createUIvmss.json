@@ -217,6 +217,7 @@
                         "defaultValue": "change-me",
                         "toolTip": "Specify storage account key for the account configured.",
                         "constraints": {
+                            "required": true,
                             "regex": ".{6,}",
                             "validationMessage": "valid storage account key to access license file."
                         },
@@ -229,6 +230,7 @@
                         "defaultValue": "change-me",
                         "toolTip": "Specify Blob name where backup file is stored.",
                         "constraints": {
+                            "required": true,
                             "regex": "^(?!\\s*$).+"
                         },
                         "visible": "[equals(basics('licenseType'), 'byol')]"
