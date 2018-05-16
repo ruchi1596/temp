@@ -7,8 +7,8 @@
             {
                 "name": "wafvmssName",
                 "type": "Microsoft.Common.TextBox",
-                "label": "Barracuda CloudGen WAF VMSS Instance Host Name",
-                "toolTip": "Provide host name for the newly created instance of Barracuda CloudGen Web Application Firewall.",
+                "label": "Barracuda CloudGen WAF Virtual Machine Scale Set Name",
+                "toolTip": "This is the name for VMSS deployed for Barracuda CloudGen WAF",
                 "defaultValue": "bwafvmss",
                 "constraints": {
                     "required": true,
@@ -36,9 +36,9 @@
             {
                 "name": "licenseType",
                 "type": "Microsoft.Common.DropDown",
-                "label": "Type of Deployment",
+                "label": "Billing Method",
                 "defaultValue": "BYOL",
-                "toolTip": "Select deployment type for Barracuda CloudGen WAF",
+                "toolTip": "Select the billing method for this deployment. To use BYoL, you will have to contact Barracuda Netwroks for a license key",
                 "constraints": {
                     "required": true,
                     "allowedValues": [
@@ -201,6 +201,7 @@
                         "name": "licenseStorageAccountName",
                         "type": "Microsoft.Common.TextBox",
                         "label": "Specify storage account where license file is stored.",
+                        "defaultValue": "change-me",
                         "toolTip": "License Storage Account Name",
                         "constraints": {
                             "regex": "^[a-z0-9]{3,24}$",
@@ -212,6 +213,7 @@
                         "name": "licenseStorageAccountKey",
                         "type": "Microsoft.Common.TextBox",
                         "label": "License Storage Account Key",
+                        "defaultValue": "change-me",
                         "toolTip": "Specify storage account key for the account configured.",
                         "constraints": {
                             "regex": ".{6,}",
@@ -223,6 +225,7 @@
                         "name": "licenseContainerName",
                         "type": "Microsoft.Common.TextBox",
                         "label": "License Storage Blob Name",
+                        "defaultValue": "change-me",
                         "toolTip": "Specify Blob name where backup file is stored.",
                         "constraints": {
                             "regex": "^(?!\\s*$).+"
