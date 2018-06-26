@@ -661,7 +661,7 @@
                         "name": "wafBackupFileName1",
                         "type": "Microsoft.Common.TextBox",
                         "label": "Barracuda CloudGen WAF Backup File Name",
-                        "visible": "[and(equals(steps('wafBootStrapSettings').bootstrapMethod, 'BACKUP_BASED_BOOTSTRAP'), equals(steps('wafBootStrapSettings').backupFileType, 'bak'))]",
+                        "visible": "[and(equals(steps('wafBootStrapSettings').bootstrapMethod, 'BACKUP_BASED_BOOTSTRAP'), equals(steps('wafBootStrapSettings').backupFileType, 'json'))]",
                         "toolTip": "Specify Barracuda CloudGen WAF Backup file to be used for Barracuda CloudGen WAF bootstrapping.",
                         "constraints": {
                             "regex": "^[a-zA-Z].*.json$"
