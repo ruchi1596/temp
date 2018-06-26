@@ -624,48 +624,48 @@
                                     "required": true,
                                     "regex" : "^(?!\\s*$).+"
                                 }
-                            },
-                            {
-                                "name": "backupType",
-                                "type": "Microsoft.Common.DropDown",
-                                "label": "Type of backup",
-                                "toolTip": "Select the type of backup",
-                                "defaultValue": "BAK File",
-                                "constraints": {
-                                    "required": true,
-                                    "allowedValues": [
-                                        {
-                                            "label": "BAK File",
-                                            "value": "bak"
-                                        },
-                                        {
-                                            "label": "JSON File",
-                                            "value": "json"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "name": "wafBackupFileName1",
-                                "type": "Microsoft.Common.TextBox",
-                                "label": "Barracuda CloudGen WAF Backup File Name",
-                                "visible": "[equals(steps('backupBootstrapConfiguration').backupType, 'json')]",
-                                "toolTip": "Specify Barracuda CloudGen WAF Backup file to be used for Barracuda CloudGen WAF bootstrapping.",
-                                "constraints": {
-                                    "regex": "^[a-zA-Z].*.json$"
-                                }
-                            },
-                            {
-                                "name": "wafBackupFileName",
-                                "type": "Microsoft.Common.TextBox",
-                                "label": "Barracuda CloudGen WAF Backup File Name",
-                                "visible": "[equals(steps('backupBootstrapConfiguration').backupType, 'bak')]",
-                                "toolTip": "Specify Barracuda CloudGen WAF Backup file to be used for Barracuda CloudGen WAF bootstrapping.",
-                                "constraints": {
-                                    "regex" : "^BAR-WF.*.bak$"
-                                }
                             }
                         ]
+                    },
+                    {
+                        "name": "backupFileType",
+                        "type": "Microsoft.Common.DropDown",
+                        "label": "Type of Backup File",
+                        "visible": "[equals(steps('wafBootStrapSettings').bootstrapMethod, 'BACKUP_BASED_BOOTSTRAP')]",
+                        "defaultValue": "BAK File",
+                        "constraints": {
+                            "required": true,
+                            "allowedValues": [
+                                {
+                                    "label": "BAK File",
+                                    "value": "bak"
+                                },
+                                {
+                                    "label": "JSON File",
+                                    "value": "json"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "wafBackupFileName",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "Barracuda CloudGen WAF Backup File Name",
+                        "visible": "[and(equals(steps('wafBootStrapSettings').bootstrapMethod, 'BACKUP_BASED_BOOTSTRAP'), equals(steps('wafBootStrapSettings').backupFileType, 'bak'))]",
+                        "toolTip": "Specify Barracuda CloudGen WAF Backup file to be used for Barracuda CloudGen WAF bootstrapping.",
+                        "constraints": {
+                            "regex" : "^BAR-WF.*.bak$"
+                        }
+                    },
+                    {
+                        "name": "wafBackupFileName1",
+                        "type": "Microsoft.Common.TextBox",
+                        "label": "Barracuda CloudGen WAF Backup File Name",
+                        "visible": "[and(equals(steps('wafBootStrapSettings').bootstrapMethod, 'BACKUP_BASED_BOOTSTRAP'), equals(steps('wafBootStrapSettings').backupFileType, 'bak'))]",
+                        "toolTip": "Specify Barracuda CloudGen WAF Backup file to be used for Barracuda CloudGen WAF bootstrapping.",
+                        "constraints": {
+                            "regex": "^[a-zA-Z].*.json$"
+                        }
                     },
                     {
                         "name": "eulaDetails",
@@ -921,9 +921,9 @@
             "azureStorageAccountName": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.azureStorageAccountName]",
             "azureStorageAccountKey": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.azureStorageAccountKey]",
             "azureStorageBlobName": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.azureStorageBlobName]",
-            "azureBootstrapBackupFiletype": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.backupType]",
-            "azureBootstrapBackupFilename": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.wafBackupFileName]",
-            "azureBootstrapBackupFilename1": "[steps('wafBootStrapSettings').backupBootstrapConfiguration.wafBackupFileName1]",
+            "azureBootstrapBackupFiletype": "[steps('wafBootStrapSettings').backupFileType]",
+            "azureBootstrapBackupFilename": "[steps('wafBootStrapSettings').wafBackupFileName]",
+            "azureBootstrapBackupFilename1": "[steps('wafBootStrapSettings').wafBackupFileName1]",
             "wafServiceName": "[steps('wafBootStrapSettings').basicBootstrapConfiguration.wafServiceName]",
             "wafServicePort": "[steps('wafBootStrapSettings').basicBootstrapConfiguration.wafServicePort]",
             "wafServers": "[steps('wafBootStrapSettings').basicBootstrapConfiguration.wafBackendServers]",
