@@ -630,7 +630,7 @@
                                 "type": "Microsoft.Common.DropDown",
                                 "label": "Type of backup",
                                 "toolTip": "Select the type of backup",
-                                "defaultValue": "bak",
+                                "defaultValue": "BAK File",
                                 "constraints": {
                                     "required": true,
                                     "allowedValues": [
@@ -649,6 +649,7 @@
                                 "name": "wafBackupFileName1",
                                 "type": "Microsoft.Common.TextBox",
                                 "label": "Barracuda CloudGen WAF Backup File Name",
+                                "visible": "[equals(steps('backupBootstrapConfiguration').backupType, 'json')]",
                                 "toolTip": "Specify Barracuda CloudGen WAF Backup file to be used for Barracuda CloudGen WAF bootstrapping.",
                                 "constraints": {
                                     "regex": "^[a-zA-Z].*.json$"
@@ -658,6 +659,7 @@
                                 "name": "wafBackupFileName",
                                 "type": "Microsoft.Common.TextBox",
                                 "label": "Barracuda CloudGen WAF Backup File Name",
+                                "visible": "[equals(steps('backupBootstrapConfiguration').backupType, 'bak')]",
                                 "toolTip": "Specify Barracuda CloudGen WAF Backup file to be used for Barracuda CloudGen WAF bootstrapping.",
                                 "constraints": {
                                     "regex" : "^BAR-WF.*.bak$"
