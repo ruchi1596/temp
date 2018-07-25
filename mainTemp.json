@@ -312,7 +312,7 @@
 				"provider": "[variables('barracudaNetworksTags').provider]"
 			},
 			"plan": {
-				"name": "[if(equals(parameters('deploymentType'),'BYOL'), variables('byolGuid'), variables('hourlyGuid'))]",
+				"name": "[if(equals(parameters('deploymentType'),'BYOL'), 'byol', 'hourly')]",
 				"Product": "waf",
 				"Publisher": "barracudanetworks"
 			},
