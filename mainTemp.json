@@ -154,7 +154,9 @@
 		},
 		"netPro0": "[resourceId('Microsoft.Network/networkInterfaces', variables('nicName0Prefix'))]",
 		"netPro1": "[resourceId('Microsoft.Network/networkInterfaces', variables('nicName1Prefix'))]",
-		"osDiskName": "[concat(parameters('vmName'), '-', 'wafosdisk', '-', uniquestring(parameters('vmName')))]"
+		"osDiskName": "[concat(parameters('vmName'), '-', 'wafosdisk', '-', uniquestring(parameters('vmName')))]",
+                "byolGuid": "14d7ae0f-e0bd-413c-8bb4-adbdca0e3bdd",
+                "hourlyGuid": "a81f7548-5d6a-4a96-8366-2b6b2dc93ff6"
 	},
 	"resources": [{
 			"apiVersion": "2016-01-01",
@@ -331,7 +333,7 @@
 					"imageReference": {
 						"publisher": "barracudanetworks",
 						"offer": "waf",
-						"sku": "[if(equals(parameters('deploymentType'),'BYOL'), 'byol', 'hourly')]",
+						"sku": "[if(equals(parameters('deploymentType'),'BYOL'), variables('byolGuid'), variables('hourlyGuid'))]",
 						"version": "latest"
 					},
 					"osDisk": {
