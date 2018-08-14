@@ -333,7 +333,7 @@
 					"imageReference": {
 						"publisher": "barracudanetworks",
 						"offer": "waf",
-						"sku": "[if(equals(parameters('deploymentType'),'BYOL'), variables('byolGuid'), variables('hourlyGuid'))]",
+						"sku": "[if(equals(parameters('deploymentType'),'BYOL'), 'byol', 'hourly')]",
 						"version": "latest"
 					},
 					"osDisk": {
