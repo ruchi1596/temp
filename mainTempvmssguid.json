@@ -482,8 +482,6 @@
     "imagePublisher": "barracudanetworks",
     "imageVersion": "latest",
     "imageSKU": "[parameters('billingMethod')]",
-    "byolGuid": "pid-3a1c46a7-c7c5-46a8-979d-b16ffbb1593a",
-    "hourlyGuid": "pid-04165ab1-d6f8-458c-bdb1-1688438a0721",
     "imageOffer": "waf",
     "useNewStorageAccount": "[equals(parameters('storageAccountNewOrExisting'), 'new')]",
     "useNewVnet": "[equals(parameters('vNETNewOrExisting'), 'new')]",
@@ -496,7 +494,7 @@
       "version": "[variables('imageVersion')]"
     },
     "imagePlan": {
-      "name": "[if(equals(variables('imageSKU'),'byol'), variables('byolGuid'), variables('hourlyGuid'))]",
+      "name": "[variables('imageSKU')]",
       "product": "[variables('imageOffer')]",
       "publisher": "[variables('imagePublisher')]"
     },
@@ -963,6 +961,19 @@
           }
         ]
       }
+    },
+    {
+       "name": "pid-14d7ae0f-e0bd-413c-8bb4-adbdca0e3bdd",
+       "type": "Microsoft.Resources/deployments",
+       "apiVersion": "2018-07-01",
+       "properties": {
+            "mode": "Incremental",
+            "template": {
+                 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                 "contentVersion": "1.0.0.0",
+                 "resources": []
+            }
+        }
     }
   ]
 }
