@@ -938,6 +938,7 @@
             "wafServers": "[steps('wafBootStrapSettings').basicBootstrapConfiguration.wafBackendServers]",
             "wafOmsPrimaryKey": "[steps('wafBootStrapSettings').omsWorkSpaceDetails.omsWorkspacePrimaryKey]",
             "wafOmsWorkspaceId": "[steps('wafBootStrapSettings').omsWorkSpaceDetails.omsWorkspaceId]",
+            "wafNotifySlack": "[steps('autoScaleSettings').notifySlack]",
             "wafNotifyEmail": "[steps('autoScaleSettings').notifyEmailAddresses]",
             "albHealthProbeProtocol": "[steps('azureLoadBalancerSettings').albHealthProbe.probeProtocol]",
             "albHealthProbePort": "[steps('azureLoadBalancerSettings').albHealthProbe.probePort]",
