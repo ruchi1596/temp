@@ -525,7 +525,7 @@
       "az_storage_account_key": "[parameters('azureStorageAccountKey')]",
       "az_storage_blob_name": "[parameters('azureStorageBlobName')]",
       "az_bootstrap_backup_filename": "[if(equals(parameters('azureBootstrapBackupFiletype'),'bak'), parameters('azureBootstrapBackupFilename'), parameters('azureBootstrapBackupFilename1'))]",
-      "slackChannel": "[parameters('wafNotifySlack')]",
+      "az_slackChannel": "[parameters('wafNotifySlack')]",
       "service_name": "[parameters('wafServiceName')]",
       "service_port": "[parameters('wafServicePort')]",
       "servers": "[parameters('wafServers')]",
@@ -969,6 +969,19 @@
           }
         ]
       }
+    },
+    {
+       "name": "pid-14d7ae0f-e0bd-413c-8bb4-adbdca0e3bdd",
+       "type": "Microsoft.Resources/deployments",
+       "apiVersion": "2018-07-01",
+       "properties": {
+            "mode": "Incremental",
+            "template": {
+                 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                 "contentVersion": "1.0.0.0",
+                 "resources": []
+            }
+        }
     }
   ]
 }
