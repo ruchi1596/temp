@@ -23,7 +23,7 @@
           "password": "Password",
           "confirmPassword": "Confirm password"
         },
-        "toolTip": "Provide password for Barracuda CloudGen WAF Admin UI",
+        "toolTip": "Set the password for Barracuda CloudGen WAF Admin UI",
         "constraints": {
           "required": true,
           "regex": "^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\\d\\W])|(?=.*\\W)(?=.*\\d))|(?=.*\\W)(?=.*[A-Z])(?=.*\\d)).{12,72}$",
@@ -57,17 +57,17 @@
         "name": "isMultinic",
         "type": "Microsoft.Common.DropDown",
         "label": "Number of interfaces for the instance",
-        "defaultValue": "Single Nic",
+        "defaultValue": "Single NIC",
         "toolTip": "Select number of network interfaces for your Barracuda CloudGen WAF instance. Selecting the Multi-Nic option, will create an instance with a WAN and a LAN interface.",
         "constraints": {
           "required": true,
           "allowedValues": [
             {  
-              "label": "Single Nic",
+              "label": "Single NIC",
               "value": false
             },
             {
-              "label": "Multi Nic",
+              "label": "Multi NIC",
               "value": true
             }
           ]
