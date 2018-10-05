@@ -48,7 +48,7 @@
             },
             {
               "label": "Pay as You Go (Hourly Billing)",
-              "value": "Hourly"
+              "value": "PAYG"
             }
           ]
         }
