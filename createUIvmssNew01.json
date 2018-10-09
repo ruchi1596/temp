@@ -506,7 +506,7 @@
                             },
                             {
                                 "name": "azureSecretKey",
-                                "type": "Microsoft.Common.TextBox",
+                                "type": "Microsoft.Common.PasswordBox",
                                 "label": "Azure Secret Key",
                                 "toolTip": "Azure Secret Key",
                                 "constraints": {
