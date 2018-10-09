@@ -247,7 +247,7 @@
             },
             "defaultValue": {
               "publicIpAddressName": "wafpip",
-              "domainNameLabel": "change_me_to_be_unique"
+              "domainNameLabel": "change-me-to-be-unique"
             },
             "constraints": {
               "required": {
