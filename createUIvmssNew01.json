@@ -901,6 +901,65 @@
                         ]
                     }
                 ]
+            },
+            {
+                "name": "eulaDetails",
+                "label": "Eula Details",
+                "subLabel": {
+                    "preValidation": "Provide Eula Details",
+                    "postValidation": "Done"
+                },
+                "bladeTitle": "Eula Configuration",
+                "visible": "[equals(basics('licenseType'), 'byol')]",
+                "elements" : [
+                    {
+                        "name": "eulaDetails",
+                        "type": "Microsoft.Common.Section",
+                        "label": "EULA Acceptance Details",
+                        "elements": [
+                            {
+                                "name": "eulaUserName",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "User Name",
+                                "toolTip": "Name of the user accepting EULA.",
+                                "constraints": {
+                                    "required": true,
+                                    "regex": ".{2,}"
+                                }
+                            },
+                            {
+                                "name": "eulaUserEmail",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Email ID",
+                                "toolTip": "Email ID of the user accepting the EULA.",
+                                "constraints": {
+                                    "required": true,
+                                    "regex" : "^(([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}),?)+$"
+                                }
+                            },
+                            {
+                                "name": "eulaUserCompany",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Company Name",
+                                "toolTip": "Company Name of the user accepting EULA.",
+                                "constraints": {
+                                    "required": true,
+                                    "regex": ".{2,}"
+                                }
+                            },
+                            {
+                                "name": "defaultDomainName",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Domain Name",
+                                "toolTip": "Domain Name.",
+                                "constraints": {
+                                    "required": true,
+                                    "regex": ".{2,}"
+                                }
+                            }
+                        ]
+                    }
+                ]
             }
         ],
         "outputs": {
