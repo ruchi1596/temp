@@ -180,7 +180,7 @@
               "subnet0": {
                 "label": "WAN NIC",
                 "defaultValue": {
-                  "name": "[concat(basics('wafvmname'), 'wan-nic')]"
+                  "name": "[concat(basics('wafvmname'), '-wan-nic')]"
                 },
                 "constraints": {
                   "minAddressPrefixSize": "/24",
@@ -213,7 +213,7 @@
               "subnet0": {
                 "label": "WAN NIC",
                 "defaultValue": {
-                  "name": "[concat(basics('wafvmname'), 'wan-nic')]"
+                  "name": "[concat(basics('wafvmname'), '-wan-nic')]"
                 },
                 "constraints": {
                   "minAddressPrefixSize": "/24",
@@ -224,7 +224,7 @@
               "subnet1": {
                 "label": "LAN NIC",
                 "defaultValue": {
-                  "name": "[concat(basics('wafvmname'), 'lan-nic')]"
+                  "name": "[concat(basics('wafvmname'), '-lan-nic')]"
                 },
                 "constraints": {
                   "minAddressPrefixSize": "/24",
