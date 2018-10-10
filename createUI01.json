@@ -259,6 +259,25 @@
               "hideNone": true,
               "hideExisting": true
             }
+          },
+          {
+            "name": "bootDiagnostics",
+            "type": "Microsoft.Common.OptionsGroup",
+            "label": "Boot Diagnostics",
+            "defaultValue": "Disabled",
+            "toolTip": "Capture serial console output and screenshots of the virtual machine running on a host to help diagnose startup issues. This will use storage account configured above.",
+            "constraints": {
+              "allowedValues": [
+                {
+                   "label": "Enabled",
+                   "value": true  
+                },
+                {
+                   "label": "Disabled",
+                   "value": false
+                }
+              ]
+            }
           }
         ]
       }
@@ -283,7 +302,8 @@
       "subnetPrefix": "[steps('DeployConfig').vnetSpec.subnets.subnet0.addressPrefix]",
       "subnet1Prefix": "[steps('DeployConfig').vnetSpec1.subnets.subnet0.addressPrefix]",
       "subnet2Prefix": "[steps('DeployConfig').vnetSpec1.subnets.subnet1.addressPrefix]",
-      "addressPrefix": "[steps('DeployConfig').vnetSpec1.addressPrefix]"
+      "addressPrefix": "[steps('DeployConfig').vnetSpec1.addressPrefix]",
+      "bootDiag": "[steps('DeployConfig').bootDiagnostics]"
     }
   }
 }
