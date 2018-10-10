@@ -507,7 +507,10 @@
                             {
                                 "name": "azureSecretKey",
                                 "type": "Microsoft.Common.PasswordBox",
-                                "label": "Azure Secret Key",
+                                "label": {
+                                    "password": "Secret Key",
+                                    "confirmPassword": "Confirm Secret Key"
+                                },
                                 "toolTip": "Azure Secret Key",
                                 "constraints": {
                                     "regex": ".{6,}",
@@ -692,53 +695,6 @@
                         }
                     },
                     {
-                        "name": "eulaDetails",
-                        "type": "Microsoft.Common.Section",
-                        "label": "EULA Acceptance Details",
-                        "elements": [
-                            {
-                                "name": "eulaUserName",
-                                "type": "Microsoft.Common.TextBox",
-                                "label": "User Name",
-                                "toolTip": "Name of the user accepting EULA.",
-                                "constraints": {
-                                    "required": true,
-                                    "regex": ".{2,}"
-                                }
-                            },
-                            {
-                                "name": "eulaUserEmail",
-                                "type": "Microsoft.Common.TextBox",
-                                "label": "Email ID",
-                                "toolTip": "Email ID of the user accepting the EULA.",
-                                "constraints": {
-                                    "required": true,
-                                    "regex" : "^(([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}),?)+$"
-                                }
-                            },
-                            {
-                                "name": "eulaUserCompany",
-                                "type": "Microsoft.Common.TextBox",
-                                "label": "Company Name",
-                                "toolTip": "Company Name of the user accepting EULA.",
-                                "constraints": {
-                                    "required": true,
-                                    "regex": ".{2,}"
-                                }
-                            },
-                            {
-                                "name": "defaultDomainName",
-                                "type": "Microsoft.Common.TextBox",
-                                "label": "Domain Name",
-                                "toolTip": "Domain Name.",
-                                "constraints": {
-                                    "required": true,
-                                    "regex": ".{2,}"
-                                }
-                            }
-                        ]
-                    },
-                    {
                         "name": "omsWorkSpaceDetails",
                         "type": "Microsoft.Common.Section",
                         "label": "OMS workspace Details",
@@ -899,6 +855,52 @@
                                 }
                             }
   `                      ]
+                    },
+                    {
+                        "name": "eulaDetails",
+                        "type": "Microsoft.Common.Section",
+                        "label": "EULA Acceptance Details",
+                        "elements": [
+                            {
+                                "name": "eulaUserName",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "User Name",
+                                "toolTip": "Name of the user accepting EULA.",
+                                "constraints": {
+                                    "required": true,
+                                    "regex": ".{2,}"
+                            },
+                            {
+                                "name": "eulaUserEmail",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Email ID",
+                                "toolTip": "Email ID of the user accepting the EULA.",
+                                "constraints": {
+                                    "required": true,
+                                    "regex" : "^(([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}),?)+$"
+                                }
+                            },
+                            {
+                                "name": "eulaUserCompany",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Company Name",
+                                "toolTip": "Company Name of the user accepting EULA.",
+                                "constraints": {
+                                    "required": true,
+                                    "regex": ".{2,}"
+                                }
+                            },
+                            {
+                                "name": "defaultDomainName",
+                                "type": "Microsoft.Common.TextBox",
+                                "label": "Domain Name",
+                                "toolTip": "Domain Name.",
+                                "constraints": {
+                                    "required": true,
+                                    "regex": ".{2,}"
+                                }
+                            }
+                        ]
                     }
                 ]
             }
@@ -963,10 +965,10 @@
             "albRuleFrontEndPort": "[steps('azureLoadBalancerSettings').albLoadBalanceRule.frontEndPort]",
             "albRuleBackEndPort": "[steps('azureLoadBalancerSettings').albLoadBalanceRule.backEndPort]",
             "albRulePersistency": "[steps('azureLoadBalancerSettings').albLoadBalanceRule.sessionPersistence]",
-            "eulaUserName": "[steps('wafBootStrapSettings').eulaDetails.eulaUserName]",
-            "eulaUserEmail": "[steps('wafBootStrapSettings').eulaDetails.eulaUserEmail]",
-            "eulaUserCompany": "[steps('wafBootStrapSettings').eulaDetails.eulaUserCompany]",
-            "defaultDomainName": "[steps('wafBootStrapSettings').eulaDetails.defaultDomainName]"
+            "eulaUserName": "[steps('azureLoadBalancerSettings').eulaDetails.eulaUserName]",
+            "eulaUserEmail": "[steps('azureLoadBalancerSettings').eulaDetails.eulaUserEmail]",
+            "eulaUserCompany": "[steps('azureLoadBalancerSettings').eulaDetails.eulaUserCompany]",
+            "defaultDomainName": "[steps('azureLoadBalancerSettings').eulaDetails.defaultDomainName]"
         }
     }
 }
