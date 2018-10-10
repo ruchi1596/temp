@@ -142,7 +142,14 @@
 			"metadata": {
 				"description": "Size of instances"
 			}
-		}
+		},
+                "bootDiag": {
+                       "type": "bool",
+                       "defaultValue": true,
+                       "metadata": {
+                               "description": "Enable boot diagnostics for the vmss instances."
+                       }
+                }
 	},
 	"variables": {
 		"nicName0Prefix": "[concat(parameters('vmName'),'NIC')]",
@@ -371,7 +378,7 @@
 				},
 				"diagnosticsProfile": {
 					"bootDiagnostics": {
-						"enabled": true,
+						"enabled": "parameters('bootDiag')",
 						"storageUri": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')),'2016-01-01').primaryEndpoints.blob]"
 					}
 				}
