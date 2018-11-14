@@ -159,7 +159,7 @@
                             "hideExisting": false
                         },
                         "constraints": {
-                            "minAddressPrefixSize": "/16"
+                            "minAddressPrefixSize": "/20"
                         },
                         "subnets": {
                             "subnet0": {
