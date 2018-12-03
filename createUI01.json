@@ -37,7 +37,7 @@
         "name": "licenseType",
         "type": "Microsoft.Common.DropDown",
         "label": "Billing Method",
-        "defaultValue": "BYOL",
+        "defaultValue": "Bring your own License (BYoL)",
         "toolTip": "Select the billing method for this deployment. To use BYoL, you will have to contact Barracuda Netwroks for a license key",
         "constraints": {
           "required": true,
@@ -57,7 +57,7 @@
         "name": "firmwareVersion",
         "type": "Microsoft.Common.DropDown",
         "label": "Firmware Version",
-        "defaultValue": "latest",
+        "defaultValue": "LATEST",
         "toolTip": "Select the firmware version for the instance",
         "constraints": {
           "required": true,
