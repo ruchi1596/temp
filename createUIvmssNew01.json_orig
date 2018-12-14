@@ -158,6 +158,9 @@
                         "options": {
                             "hideExisting": false
                         },
+                        "constraints": {
+                            "minAddressPrefixSize": "/20"
+                        },
                         "subnets": {
                             "subnet0": {
                                 "label": "Barracuda CloudGen WAF Subnet",
@@ -166,6 +169,7 @@
                                     "addressPrefixSize": "/24"
                                 },
                                 "constraints": {
+                                    "minAddressPrefixSize": "/24",
                                     "minAddressCount": 1,
                                     "requireContiguousAddresses": true
                                 }
