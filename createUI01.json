@@ -173,13 +173,17 @@
             "options": {
               "hideExisting": false
             },
+            "constraints": {
+              "minAddressPrefixSize": "/28"
+            },
             "subnets": {
               "subnet0": {
                 "label": "WAN NIC",
                 "defaultValue": {
                   "name": "[concat(basics('wafvmname'), '-wan-nic')]"
                 },
-                "constraints": { 
+                "constraints": {
+                  "minAddressPrefixSize": "/28",
                   "minAddressCount": 1,
                   "requireContiguousAddresses": true
                 }
@@ -201,14 +205,18 @@
             },
             "options": {
               "hideExisting": false
-            }, 
+            },
+            "constraints": {
+              "minAddressPrefixSize": "/28"
+            },
             "subnets": {
               "subnet0": {
                 "label": "WAN NIC",
                 "defaultValue": {
                   "name": "[concat(basics('wafvmname'), '-wan-nic')]"
                 },
-                "constraints": { 
+                "constraints": {
+                  "minAddressPrefixSize": "/28",
                   "minAddressCount": 1,
                   "requireContiguousAddresses": true
                 }
@@ -219,6 +227,7 @@
                   "name": "[concat(basics('wafvmname'), '-lan-nic')]"
                 },
                 "constraints": {
+                  "minAddressPrefixSize": "/28",
                   "minAddressCount": 1,
                   "requireContiguousAddresses": true
                 }
