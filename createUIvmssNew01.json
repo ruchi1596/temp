@@ -166,7 +166,7 @@
                                 "label": "Barracuda CloudGen WAF Subnet",
                                 "defaultValue": {
                                     "name": "wafSubnet",
-                                    "addressPrefixSize": "/28"
+                                    "addressPrefixSize": "/24"
                                 },
                                 "constraints": {
                                     "minAddressPrefixSize": "/28",
