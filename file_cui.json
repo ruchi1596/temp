@@ -302,13 +302,22 @@
       "storageAccountName": "[steps( 'DeployConfig' ).storageElement.name]",
       "storageAccountType": "[steps('DeployConfig').storageElement.type]",
       "vmSize": "[steps('DeployConfig').standardVmSize]",
-      "vNETName": "[if(equals(basics('isMultinic'),bool('false')),steps('DeployConfig').vnetSpec.name, steps('DeployConfig').vnetSpec1.name)]",
-      "subnetName": "[if(equals(basics('isMultinic'),bool('false')),steps('DeployConfig').vnetSpec.subnets.subnet0.name, steps('DeployConfig').vnetSpec1.subnets.subnet0.name)]",
+      "vNETName": {
+          "value": "[if(equals(basics('isMultinic'),bool('false')),steps('DeployConfig').vnetSpec.name, steps('DeployConfig').vnetSpec1.name)]",
+	  "type": "string"
+      },
+      "subnetName": {
+          "value": "[if(equals(basics('isMultinic'),bool('false')),steps('DeployConfig').vnetSpec.subnets.subnet0.name, steps('DeployConfig').vnetSpec1.subnets.subnet0.name)]",
+	  "type": "string"
+      },
       "subnet2Name": "[steps('DeployConfig').vnetSpec1.subnets.subnet1.name]",
       "dnsNameForIP": "[steps('DeployConfig').dnsSpec.domainNameLabel]",
       "publicIPAddressName": "[steps('DeployConfig').dnsSpec.name]",
       "adminPassword": "[basics('Password')]",
-      "subnetPrefix": "[if(equals(basics('isMultinic'),bool('false')),steps('DeployConfig').vnetSpec.subnets.subnet0.addressPrefix, steps('DeployConfig').vnetSpec1.subnets.subnet0.addressPrefix)]",
+      "subnetPrefix": {
+          "value": "[if(equals(basics('isMultinic'),bool('false')),steps('DeployConfig').vnetSpec.subnets.subnet0.addressPrefix, steps('DeployConfig').vnetSpec1.subnets.subnet0.addressPrefix)]",
+	  "type": "string"
+      },
       "subnet2Prefix": "[steps('DeployConfig').vnetSpec1.subnets.subnet1.addressPrefix]",
       "addressPrefix": "[steps('DeployConfig').vnetSpec1.addressPrefix]",
       "bootDiag": "[steps('DeployConfig').bootDiagnostics]"
