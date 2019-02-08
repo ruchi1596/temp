@@ -256,6 +256,9 @@
 			"type": "Microsoft.Network/publicIPAddresses",
 			"name": "[parameters('publicIPAddressName')]",
 			"location": "[parameters('location')]",
+			"sku": {
+				"name": "Basic"
+			},
 			"tags": {
 				"displayName": "wafPublicIPAddress",
 				"provider": "[variables('barracudaNetworksTags').provider]"
