@@ -77,6 +77,9 @@
 		"publicIPAddressName": {
 			"type": "string"
 		},
+		"publicIPSku": {
+		        "type": "string"
+		},
 		"vNETNewOrExisting": {
 			"type": "string",
 			"defaultValue": "new",
@@ -257,7 +260,7 @@
 			"name": "[parameters('publicIPAddressName')]",
 			"location": "[parameters('location')]",
                         "sku": {
-			        "name": "Basic"
+			        "name": "[parameters('publicIPSku')]"
 			},
 			"tags": {
 				"displayName": "wafPublicIPAddress",
