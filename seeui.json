@@ -305,6 +305,8 @@
       "subnet2NameMultiNic": "[steps('DeployConfig').vnetSpec1.subnets.subnet1.name]",
       "dnsNameForIP": "[steps('DeployConfig').dnsSpec.domainNameLabel]",
       "publicIPAddressName": "[steps('DeployConfig').dnsSpec.name]",
+      "publicIPSku": "[steps('DeployConfig').dnsSpec.sku]",
+      "publicIPAllocation": "[steps('DeployConfig').dnsSpec.publicIPAllocationMethod]",
       "adminPassword": "[basics('Password')]",
       "subnetPrefixSingleNic": "[steps('DeployConfig').vnetSpec.subnets.subnet0.addressPrefix]",
       "subnetPrefixMultiNic": "[steps('DeployConfig').vnetSpec1.subnets.subnet0.addressPrefix]",
