@@ -80,6 +80,9 @@
 		"publicIPSku": {
 		        "type": "string"
 		},
+		"publicIPAllocation": {
+		        "type": "string"
+		},
 		"vNETNewOrExisting": {
 			"type": "string",
 			"defaultValue": "new",
@@ -186,7 +189,6 @@
 		"subnet1": "[if(equals(parameters('networkInterfaceType'),bool('false')),parameters('subnetNameSingleNic'), parameters('subnetNameMultiNic'))]",
 		"subnet1prefix": "[if(equals(parameters('networkInterfaceType'),bool('false')),parameters('subnetPrefixSingleNic'), parameters('subnetPrefixMultiNic'))]",
 		"nsgVar": "[concat(parameters('vmName'),'NSG')]",
-		"publicIPAddressType": "Static",
 		"vnetID": "[resourceId(parameters('vNETResourceGroup'), 'Microsoft.Network/virtualNetworks', variables('vNetName'))]",
 		"subnet0Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1'))]",
 		"subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet2NameMultiNic'))]",
@@ -267,7 +269,7 @@
 				"provider": "[variables('barracudaNetworksTags').provider]"
 			},
 			"properties": {
-				"publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+				"publicIPAllocationMethod": "[parameters('publicIPAllocation')]",
 				"dnsSettings": {
 					"domainNameLabel": "[parameters('dnsNameForIP')]"
 				}
