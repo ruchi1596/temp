@@ -256,6 +256,9 @@
               "publicIpAddress": "Only new public IP is currently supported",
               "domainNameLabel": "Barracuda CloudGen WAF UI will be accessible from port 8000 or 8443 of this domain"
             },
+	    "defaultValue": {
+	      "publicIpAddressName": "wafpip"
+	    },
             "constraints": {
               "required": {
                 "domainNameLabel": true
