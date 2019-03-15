@@ -188,8 +188,7 @@
                             "domainNameLabel": "Barracuda CloudGen WAF UI will be accessible from port 8000 or 8443 of this domain"
                         },
                         "defaultValue": {
-                            "publicIpAddressName": "wafpip",
-                            "domainNameLabel": "change-me-to-be-unique"
+                            "publicIpAddressName": "wafpip"
                         },
                         "constraints": {
                             "required": {
