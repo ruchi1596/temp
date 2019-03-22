@@ -379,7 +379,10 @@
       "subnet2PrefixMultiNic": "[steps('DeployConfig').vnetSpec1.subnets.subnet1.addressPrefix]",
       "addressPrefixSingleNic": "[steps('DeployConfig').vnetSpec.addressPrefix]",
       "addressPrefixMultiNic": "[steps('DeployConfig').vnetSpec1.addressPrefix]",
-      "bootDiag": "[steps('DeployConfig').bootDiagnostics]"
+      "bootDiag": "[steps('DeployConfig').bootDiagnostics]",
+      "asEnable": "[steps('EnableAS').EnableASYesOrNo]",
+      "asFaultDomain": "[steps('EnableAS').ASFaultDomains]",
+      "asUpdateDomain": "[steps('EnableAS').ASUpdateDomains]"
     }
   }
 }
