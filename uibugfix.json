@@ -63,15 +63,15 @@
                     "required": true,
                     "allowedValues": [
                         {
-                            "label": "9.1.101501",
-                            "value": "9.1.101501"
+                            "label": "9.2.002004",
+                            "value": "9.2.002004"
                         },
                         {
-                            "label": "9.1.101601",
-                            "value": "9.1.101601"
+                            "label": "9.2.101504",
+                            "value": "9.2.101504"
                         },
                         {
-                            "label": "LATEST",
+                            "label": "LATEST(10.0.002001)",
                             "value": "latest"
                         }
                     ]
