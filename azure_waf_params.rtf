@@ -1,0 +1,49 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red153\green168\blue186;\red32\green32\blue32;\red128\green63\blue122;
+\red152\green54\blue29;\red86\green132\blue173;\red191\green100\blue38;\red149\green184\blue79;\red109\green109\blue109;
+\red117\green114\blue185;}
+{\*\expandedcolortbl;;\csgenericrgb\c60000\c65882\c72941;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c50196\c24706\c47843;
+\csgenericrgb\c59608\c21176\c11373;\csgenericrgb\c33725\c51765\c67843;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c58431\c72157\c30980;\csgenericrgb\c42745\c42745\c42745;
+\csgenericrgb\c45882\c44706\c72549;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 vmssName = \cf4 self\cf2 .name_generator.haikunate(\cf5 token_length\cf2 =\cf6 0\cf7 , \cf5 delimiter\cf2 =\cf8 ''\cf2 )\
+\cf7 while \cf2 len(vmssName) < \cf6 9\cf2 :\
+    vmssName = \cf4 self\cf2 .name_generator.haikunate(\cf5 token_length\cf2 =\cf6 0\cf7 , \cf5 delimiter\cf2 =\cf8 ''\cf2 )\
+waf_params.setdefault(\cf8 "vmssName"\cf7 , \cf2 vmssName[:\cf6 9\cf2 ])\
+\cf4 self\cf2 .waf[\cf8 "vmss"\cf2 ] = waf_params[\cf8 "vmssName"\cf2 ]\
+waf_params.setdefault(\cf8 "location"\cf7 , \cf4 self\cf2 .waf[\cf8 "region"\cf2 ])\
+waf_params.setdefault(\cf8 "billingMethod"\cf7 , \cf8 "hourly"\cf2 )\
+waf_params.setdefault(\cf8 "vNETNewOrExisting"\cf7 , \cf8 "existing"\cf2 )\
+waf_params.setdefault(\cf8 "vNETResourceGroup"\cf7 , \cf2 user_resource_group)\
+waf_params.setdefault(\cf8 "vNETName"\cf7 , \cf2 user_vnet)\
+waf_params.setdefault(\cf8 "vmSku"\cf7 , \cf2 azure_instance_types[\cf4 self\cf2 .waf[\cf8 "instancetype"\cf2 ]])\
+\cf9 # Input might have multiple subnets; Azure only uses one - assume first one in list\
+\cf2 waf_params.setdefault(\cf8 "subnetName"\cf7 , \cf4 self\cf2 .waf[\cf8 "publicsubnets"\cf2 ][\cf6 0\cf2 ])\
+\
+vnet_info = \cf4 self\cf2 .network_client.virtual_networks.get(\cf5 resource_group_name\cf2 =user_resource_group\cf7 , \cf5 virtual_network_name\cf2 =user_vnet)\
+log.debug(\cf8 "VNET info: %s"\cf7 , \cf2 json.dumps(json.loads(jsonpickle.encode(vnet_info))\cf7 , \cf5 sort_keys\cf2 =\cf10 True\cf7 , \cf5 indent\cf2 =\cf6 2\cf2 ))\
+\cf7 for \cf2 subnet \cf7 in \cf2 vnet_info.subnets:\
+    \cf7 if \cf2 subnet.name == \cf4 self\cf2 .waf[\cf8 "publicsubnets"\cf2 ]:\
+        log.debug(\cf8 "Matched subnet: %s with address_prefix: %s"\cf7 , \cf2 subnet.name\cf7 , \cf2 subnet.address_prefix)\
+        waf_params.setdefault(\cf8 "addressPrefix"\cf7 , \cf2 subnet.address_prefix)\
+        waf_params.setdefault(\cf8 "subnetPrefix"\cf7 , \cf2 subnet.address_prefix)\
+\
+waf_params.setdefault(\cf8 "storageAccountName"\cf7 , \cf4 self\cf2 .waf[\cf8 "vmss"\cf2 ])\
+waf_params.setdefault(\cf8 "dnsNameForIP"\cf7 , \cf4 self\cf2 .waf[\cf8 "vmss"\cf2 ])\
+waf_params.setdefault(\cf8 "publicIPAddressName"\cf7 , \cf4 self\cf2 .waf[\cf8 "vmss"\cf2 ])\
+waf_params.setdefault(\cf8 "adminPassword"\cf7 , \cf4 self\cf2 .waf[\cf8 "adminpw"\cf2 ])\
+waf_params.setdefault(\cf8 "azureAuthenticationMethod"\cf7 , \cf8 "AZURE_SERVICE_PRINCIPAL"\cf2 )\
+waf_params.setdefault(\cf8 "azureClientId"\cf7 , \cf4 self\cf2 .cloud_account.client_id)\
+waf_params.setdefault(\cf8 "azureTenantId"\cf7 , \cf4 self\cf2 .cloud_account.tenant_id)\
+waf_params.setdefault(\cf8 "azureSecretKey"\cf7 , \cf4 self\cf2 .cloud_account.secret)\
+waf_params.setdefault(\cf8 "WafNewUser"\cf7 , \cf4 self\cf2 .waf[\cf8 'ga_user'\cf2 ])\
+waf_params.setdefault(\cf8 "WafNewUserPassword"\cf7 , \cf2 decrypt(\cf4 self\cf2 .waf[\cf8 "ga_pw"\cf2 ]))\
+waf_params.setdefault(\cf8 "WafNewUserEmail"\cf7 , \cf4 self\cf2 .waf[\cf8 "email"\cf2 ])\
+waf_params.setdefault(\cf8 "WafNewUserRole"\cf7 , \cf8 "admin"\cf2 )\
+waf_params.setdefault(\cf8 "eulaUserName"\cf7 , \cf4 self\cf2 .waf[\cf8 "email"\cf2 ])\
+waf_params.setdefault(\cf8 "eulaUserEmail"\cf7 , \cf4 self\cf2 .waf[\cf8 "email"\cf2 ])\
+waf_params.setdefault(\cf8 "eulaUserCompany"\cf7 , \cf4 self\cf2 .waf[\cf8 "email"\cf2 ])\
+}
