@@ -1,0 +1,71 @@
+{
+  "location": {
+    "value": "eastus"
+  },
+  "vmName": {
+    "value": "bwaf"
+  },
+  "deploymentType": {
+    "value": "BYOL"
+  },
+  "firmware": {
+    "value": "other"
+  },
+  "olderfirmwareVersion": {
+    "value": "9.2.101504"
+  },
+  "networkInterfaceType": {
+    "value": false
+  },
+  "storageAccountName": {
+    "value": "storagerkumari"
+  },
+  "storageAccountNewOrExisting": {
+    "value": "new"
+  },
+  "storageAccountResourceGroup": {
+    "value": "res-az-rkumari"
+  },
+  "storageAccountType": {
+    "value": "Standard_LRS"
+  },
+  "vmSize": {
+    "value": "Standard_D2"
+  },
+  "vNETNameSinglenic": {
+    "value": "wafVnet"
+  },
+  "vNETNewOrExisting1": {
+    "value": "new"
+  },
+  "vNETResourceGroup1": {
+    "value": "res-az-rkumari"
+  },
+  "subnetNameSingleNic": {
+    "value": "bwaf-wan-nic"
+  },
+  "dnsNameForIP": {
+    "value": "domainrk"
+  },
+  "publicIPAddressName": {
+    "value": "wafpip"
+  },
+  "publicIPSku": {
+    "value": "Basic"
+  },
+  "publicIPAllocation": {
+    "value": "Dynamic"
+  },
+  "adminPassword": {
+    "value": "admin@123456"
+  },
+  "subnetPrefixSingleNic": {
+    "value": "172.21.0.0/24"
+  },
+  "addressPrefixSingleNic": {
+    "value": "172.21.0.0/16"
+  },
+  "bootDiag": {
+    "value": false
+  }
+}
