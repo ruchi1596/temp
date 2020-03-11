@@ -74,13 +74,13 @@
         }
       },
       {
-        "name": "olderfirmare",
+        "name": "olderfirmware",
 	"type": "Microsoft.Common.TextBox",
 	"label": "Enter firmware version",
 	"defaultValue": "10.0.101101",
 	"constraints": {
 	  "required": true,
-	  "regex": "^(\\d+\\.)(\\d+\\.)(\\d+\\.)(\\d+)$",
+	  "regex": "^(\\d+\\.)(\\d+\\.)(\\d+)$",
 	  "validationMessage": "Not a valid firmware version"
 	},
 	"visible": "[equals(basics('firmwareVersion'), 'other')]"
@@ -305,7 +305,7 @@
       "vmName": "[basics('wafvmname')]",
       "deploymentType": "[basics('licenseType')]",
       "firmware": "[basics('firmwareVersion')]",
-      "olderfirmwareVersion": "[basics('olderfirmare')]",
+      "olderfirmwareVersion": "[basics('olderfirmware')]",
       "networkInterfaceType": "[basics('isMultinic')]",
       "storageAccountName": "[steps('DeployConfig').storageElement.name]",
       "storageAccountNewOrExisting": "[steps('DeployConfig').storageElement.newOrExisting]",
