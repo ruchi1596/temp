@@ -63,19 +63,27 @@
           "required": true,
           "allowedValues": [
             {
-              "label": "9.2.002004",
-              "value": "9.2.002004"
+              "label": "OTHER",
+              "value": "other"
             },
             {
-              "label": "9.2.101504",
-              "value": "9.2.101504"
-            },
-            {
-              "label": "LATEST(10.0.002001)",
+              "label": "LATEST",
               "value": "latest"
             }
           ]
         }
+      },
+      {
+        "name": "olderfirmare",
+	"type": "Microsoft.Common.TextBox",
+	"label": "Enter firmware version",
+	"defaultValue": "10.0.101101",
+	"constraints": {
+	  "required": true,
+	  "regex": "^(\\d+\\.)(\\d+\\.)(\\d+\\.)(\\d+)$",
+	  "validationMessage": "Not a valid firmware version"
+	},
+	"visible": "[equals(basics('firmwareVersion'), 'other')]"
       },
       {
         "name": "isMultinic",
@@ -297,6 +305,7 @@
       "vmName": "[basics('wafvmname')]",
       "deploymentType": "[basics('licenseType')]",
       "firmware": "[basics('firmwareVersion')]",
+      "olderfirmwareVersion": "[basics('olderfirmare')]",
       "networkInterfaceType": "[basics('isMultinic')]",
       "storageAccountName": "[steps('DeployConfig').storageElement.name]",
       "storageAccountNewOrExisting": "[steps('DeployConfig').storageElement.newOrExisting]",
