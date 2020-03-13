@@ -63,6 +63,10 @@
           "required": true,
           "allowedValues": [
             {
+	      "label": "9.2.002004",
+	      "value": "9.2.002004"
+	    },
+            {
               "label": "9.2.101504",
               "value": "9.2.101504"
             },
