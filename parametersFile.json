@@ -1,0 +1,198 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmssName": {
+      "value": "vmssauto"
+    },
+    "location": {
+      "value": "South India"
+    },
+    "vmSku": {
+      "value": "Standard_D2_v2"
+    },
+    "billingMethod": {
+      "value": "byol"
+    },
+    "firmware": {
+      "value": "latest"
+    },
+    "storageAccountName": {
+      "value": "stgbyolba"
+    },
+    "storageAccountType": {
+      "value": "Standard_LRS"
+    },
+    "storageAccountNewOrExisting": {
+      "value": "new"
+    },
+    "storageAccountResourceGroup": {
+      "value": "grp-vmss-basic"
+    },
+    "dnsNameForIP": {
+      "value": "dnsbyolba"
+    },
+    "publicIPAddressName": {
+      "value": "pipbyolba"
+    },
+    "publicIPSku" : {
+      "value": "Basic"
+    },
+    "publicIPAllocation": {
+      "value": "Dynamic"
+    },
+    "vNETNewOrExisting": {
+      "value": "new"
+    },
+    "vNETResourceGroup": {
+      "value": "grp-vmss-basic"
+    },
+    "vNETName": {
+      "value": "vnetbyolba"
+    },
+    "addressPrefix": {
+      "value": "172.17.0.0/16"
+    },
+    "subnetPrefix": {
+      "value": "172.17.183.0/24"
+    },
+    "subnetName": {
+      "value": "snetba"
+    },
+    "instanceCount": {
+      "value": "2"
+    },
+    "minInstanceCount": {
+      "value": "2"
+    },
+    "maxInstanceCount": {
+      "value": "4"
+    },
+    "bootDiagnostics": {
+      "value": true
+    },
+    "scaleUpCpu": {
+      "value": "85"
+    },
+    "scaleUpNetworkIn": {
+      "value": "9175040"
+    },
+    "scaleUpNetworkOut": {
+      "value": "9175040"
+    },
+    "scaleDownCpu": {
+      "value": "60"
+    },
+    "scaleDownNetworkIn": {
+      "value": "5242880"
+    },
+    "scaleDownNetworkOut": {
+      "value": "5242880"
+    },
+    "azureOverprovisioning": {
+      "value": false
+    },
+    "adminPassword": {
+      "value": "baked88butter$$"
+    },
+    "wafSharedSecret": {
+      "value": "secret123"
+    },
+    "azureAuthenticationMethod": {
+      "value": "AZURE_SERVICE_PRINCIPAL"
+    },
+    "azureClientId": {
+      "value": "5ba54510-c36a-470a-a0bb-777752ce96e0"
+    },
+    "azureTenantId": {
+      "value": "b893e0b8-2743-4fa7-81eb-0155a9060350"
+    },
+    "azureSecretKey": {
+      "value": "8423c75c-e378-48cd-8cf1-98d31c4a01bd"
+    },
+    "wafBootstrapMethod": {
+      "value": "BASIC_SERVICE_BOOTSTRAP"
+    },
+    "azureStorageAccountName": {
+      "value": " "
+    },
+    "azureStorageAccountKey": {
+      "value": " "
+    },
+    "azureStorageBlobName": {
+      "value": " "
+    },
+    "azureBootstrapBackupFiletype": {
+      "value": "bak"
+    },
+    "azureBootstrapBackupFilename1": {
+      "value": " "
+    },
+    "azureBootstrapBackupFilename": {
+      "value": " "
+    },
+    "licenseStorageAccountName": {
+      "value": "indiawaf"
+    },
+    "licenseStorageAccountKey": {
+      "value": "MrP+C2axxmnxzQSO0bQqvPki+9rpXieud/pTq3CbWfcLxEUOr7SZl01z46FDkhDb/WF3o2xXeAgC92qNzEcdug=="
+    },
+    "licenseContainerName": {
+      "value": "license-ruchi"
+    },
+    "defaultDomainName": {
+      "value": "barracuda.in"
+    },
+    "eulaUserName": {
+      "value": "chandradip bhattacharya"
+    },
+    "eulaUserEmail": {
+      "value": "chandradip@barracuda.com"
+    },
+    "eulaUserCompany": {
+      "value": "barracuda"
+    },
+    "wafServiceName": {
+      "value": "waf_service_1"
+    },
+    "wafServicePort": {
+      "value": "80"
+    },
+    "wafServers": {
+      "value": "34.250.206.183:80"
+    },
+    "wafOmsPrimaryKey": {
+      "value": "FoYP15CvmN9EE8DRFtk4B6Vgw1+/sKqPYlEhTY9b+88kEyljgqquG/b5KUQ/V2eAshIu1KUjwgkVJNxsavq0FA=="
+    },
+    "wafOmsWorkspaceId": {
+      "value": "673fb2cb-7c97-47c4-a529-fa61da68aad4"
+    },
+    "wafNotifyEmail": {
+      "value": "chandradip@barracuda.com"
+    },
+    "albHealthProbeProtocol": {
+      "value": "tcp"
+    },
+    "albHealthProbePort": {
+      "value": "80"
+    },
+    "albHealthProbePath": {
+      "value": "/"
+    },
+    "albHealthProbeInterval": {
+      "value": "10"
+    },
+    "albHealthProbeUnhealthyThreshold": {
+      "value": "5"
+    },
+    "albRuleFrontEndPort": {
+      "value": "80"
+    },
+    "albRuleBackEndPort": {
+      "value": "80"
+    },
+    "albRulePersistency": {
+      "value": "SourceIPProtocol"
+    }
+  }
+}
